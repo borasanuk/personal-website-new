@@ -1,13 +1,17 @@
-import Navbar from "../../components/navbar/Navbar";
+import { useContext, useEffect } from "react";
+import { AppContext } from "../../AppContext";
 import { useScrollPosition } from "../../utilities/hooks";
 import "./homePage.scss";
 
 const HomePage = (): JSX.Element => {
   const scrollPosition = useScrollPosition();
+  const { setPage } = useContext(AppContext);
+  useEffect(() => {
+    setPage("home");
+  }, []);
 
   return (
     <div className="b-home-container">
-      <Navbar />
       <div className={"b-title" + (scrollPosition > 0 ? " hidden" : "")}>
         borasanuk
       </div>

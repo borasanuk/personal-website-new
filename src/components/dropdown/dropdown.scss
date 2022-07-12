@@ -9,9 +9,9 @@ a {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  // gap: 10px;
   align-items: flex-start;
-  width: 160px;
+  width: 150px;
 
   .b-dropdown-toggle {
     color: $b-pink-darkest;

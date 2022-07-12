@@ -27,6 +27,10 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
     return cloneElement(child, {
       className:
         child.props.className + " " + props.childrenClass + " " + extraClasses,
+      onClick: () => {
+        child.props.onClick();
+        setSelectedIndex(props.children.indexOf(child));
+      },
     });
   };
 
@@ -58,7 +62,7 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
                 return addCustomChildClasses(c);
               }
             })
-          : addCustomChildClasses(props.children[props.defaultIndex], "selected")}
+          : addCustomChildClasses(props.children[selectedIndex], "selected")}
       </div>
     </div>
   );

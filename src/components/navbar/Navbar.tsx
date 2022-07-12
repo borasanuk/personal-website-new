@@ -1,5 +1,6 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
+import { AppContext, pages } from "../../AppContext";
 import { useScrollPosition, useWindowSize } from "../../utilities/hooks";
 import Dropdown from "../dropdown/Dropdown";
 import "./navbar.scss";
@@ -7,8 +8,9 @@ import "./navbar.scss";
 const Navbar = (): JSX.Element => {
   const navbarRef = useRef<HTMLDivElement>(null);
   const scrollPosition = useScrollPosition();
+  const { page, setPage } = useContext(AppContext);
   const isNavbarActive = (): boolean => {
-    return scrollPosition > 0;
+    return scrollPosition > 0 || page !== "home";
   };
 
   const dimensions = useWindowSize();
@@ -27,7 +29,7 @@ const Navbar = (): JSX.Element => {
           className={
             "b-navbar" +
             (isNavbarActive() ? " active" : "") +
-            (scrollPosition > window.innerHeight - 50
+            (scrollPosition > window.innerHeight - 50 || page !== "home"
               ? " background-active"
               : "")
           }
@@ -49,20 +51,18 @@ const Navbar = (): JSX.Element => {
               }
               style={{ marginLeft: "auto" }}
               childrenClass="b-navbar-dropdown-item"
-              defaultIndex={0}
+              defaultIndex={pages.indexOf(page)}
             >
-              <Link to="/" className="b-dropdown-item" key={"home"}>
-                home
-              </Link>
-              <Link to="/" className="b-dropdown-item" key={"portfolio"}>
-                portfolio
-              </Link>
-              <Link to="/" className="b-dropdown-item" key={"blog"}>
-                blog
-              </Link>
-              <Link to="/" className="b-dropdown-item" key={"contact"}>
-                contact
-              </Link>
+              {pages.map((p) => (
+                <Link
+                  to={"/" + p}
+                  className="b-dropdown-item"
+                  key={p}
+                  onClick={() => setPage(p)}
+                >
+                  {p}
+                </Link>
+              ))}
             </Dropdown>
           ) : (
             <div
@@ -70,10 +70,16 @@ const Navbar = (): JSX.Element => {
                 "b-navbar-items-container" + (isNavbarActive() ? "" : " hidden")
               }
             >
-              <div className="b-navbar-item selected">home</div>
-              <div className="b-navbar-item">portfolio</div>
-              <div className="b-navbar-item">blog</div>
-              <div className="b-navbar-item">contact</div>
+              {pages.map((p) => (
+                <Link
+                  to={"/" + p}
+                  className={"b-navbar-item" + (p === page ? " selected" : "")}
+                  key={p}
+                  onClick={() => setPage(p)}
+                >
+                  {p}
+                </Link>
+              ))}
             </div>
           )}
         </div>
