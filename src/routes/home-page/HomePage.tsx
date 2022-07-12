@@ -28,6 +28,46 @@ const HomePage = (): JSX.Element => {
           className="b-bloom"
           style={{ position: "absolute", bottom: "0%", left: "40%" }}
         ></div>
+        <div className="container" style={{ zIndex: 1 }}>
+          <div className="col-11 col-lg-8">
+            <div className="b-showcase">
+              <div className="b-showcase-image-container">
+                <img
+                  src="https://i.ibb.co/z7GbxWc/278011989-522465269369111-4375721299295600633-n.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="b-showcase-title">
+                ku acm
+              </div>
+              <div className="b-showcase-text">
+                a thorough reimagination of the club's visual identity with a
+                renewed logo, design language, and website.
+              </div>
+            </div>
+          </div>
+          <div className="py-5"></div>
+          <div className="row">
+            <div className="ms-auto col-11 col-lg-8">
+              <div className="b-showcase left-aligned inverted-colors">
+                <div className="b-showcase-image-container left-aligned">
+                  <img
+                    src="https://i.ibb.co/vPWth7z/playground-32.png"
+                    alt=""
+                  />
+                </div>
+                <div className="b-showcase-title text-end">
+                  aeon technologies
+                </div>
+                <div className="b-showcase-text text-end">
+                  a thorough reimagination of the club's visual identity with a
+                  renewed logo, design language, and website.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div className="py-3"></div>
       </div>
       <div className="py-3"></div>
       <h1 className="yellow container">

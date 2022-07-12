@@ -29,7 +29,7 @@ const Navbar = (): JSX.Element => {
           className={
             "b-navbar" +
             (isNavbarActive() ? " active" : "") +
-            (scrollPosition > window.innerHeight - 50 || page !== "home"
+            (scrollPosition > window.innerHeight * 2 || page !== "home"
               ? " background-active"
               : "")
           }
