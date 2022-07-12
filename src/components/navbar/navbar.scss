@@ -38,6 +38,22 @@
       transition: opacity 0.6s;
     }
 
+    .b-navbar-items-container {
+      display: flex;
+      margin-top: 5px;
+      margin-left: auto;
+      gap: 20px;
+
+      .b-navbar-item {
+        color: $b-yellow;
+        font-size: 20px;
+
+        &.selected {
+          font-weight: 600;
+        }
+      }
+    }
+
     .b-navbar-items-dropdown {
       border: 1px solid $b-yellow;
       background-color: $b-yellow;

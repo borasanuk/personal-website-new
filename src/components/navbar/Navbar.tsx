@@ -13,7 +13,7 @@ const Navbar = (): JSX.Element => {
 
   const dimensions = useWindowSize();
   const shouldShowCompactNavbar = (): boolean => {
-    return dimensions.width < 600;
+    return dimensions.width < 768;
   };
 
   const shouldShowFullLogo = (): boolean => {
@@ -70,6 +70,7 @@ const Navbar = (): JSX.Element => {
                 "b-navbar-items-container" + (isNavbarActive() ? "" : " hidden")
               }
             >
+              <div className="b-navbar-item selected">home</div>
               <div className="b-navbar-item">portfolio</div>
               <div className="b-navbar-item">blog</div>
               <div className="b-navbar-item">contact</div>
