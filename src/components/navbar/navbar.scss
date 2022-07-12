@@ -1,0 +1,63 @@
+@import "src/common/colors";
+
+.b-navbar-container {
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  z-index: 999;
+
+  .b-navbar {
+    margin: 20px auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 75px;
+    background-color: $b-pink-darker;
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 28px;
+    transition: all 0.6s;
+
+    &.active {
+      width: 100%;
+      background-color: transparent;
+      padding-left: 35px;
+      padding-right: 20px;
+    }
+
+    &.background-active {
+      background-color: $b-pink-darker;
+    }
+
+    .b-navbar-logo {
+      margin-top: 2px;
+      font-family: "Prata";
+      color: $b-yellow;
+      font-size: 40px;
+      line-height: 1;
+      text-align: center;
+      transition: opacity 0.6s;
+    }
+
+    .b-navbar-items-dropdown {
+      border: 1px solid $b-yellow;
+      background-color: $b-yellow;
+      padding: 10px 15px;
+      border-radius: 20px;
+      transition: opacity 0.6s;
+      min-height: 42px;
+
+      .b-navbar-dropdown-item {
+        color: $b-pink-darkest;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.zero-width {
+  width: 0;
+}

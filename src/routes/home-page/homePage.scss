@@ -1,0 +1,42 @@
+@import "src/common/colors";
+
+.b-title {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: $b-yellow;
+  font-family: "Prata", serif;
+  font-size: 18vw;
+  text-align: center;
+  line-height: 1;
+  transition: opacity 0.5s;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+
+.b-masthead {
+  // position: relative;
+  height: 105vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $b-pink-darker;
+  transition: opacity 1s;
+
+  .b-masthead-title {
+    margin-top: auto;
+    color: $b-yellow;
+    font-family: "Prata", serif;
+    font-size: 18vw;
+    text-align: center;
+  }
+
+  &.hidden {
+    opacity: 0;
+  }
+}

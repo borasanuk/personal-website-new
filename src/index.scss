@@ -1,0 +1,28 @@
+@import "./common/colors";
+
+body {
+  margin: 0;
+  background-color: $b-pink;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.yellow {
+  color: $b-yellow;
+}
+
+
+.b-bloom {
+  box-shadow: 0 0 20vh 20vh $b-yellow;
+  background-color: rgba($b-yellow, 0.9);
+  height: 5px;
+  width: 5px;
+  border-radius: 5px;
+}
