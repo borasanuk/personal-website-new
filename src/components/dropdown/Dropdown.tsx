@@ -1,4 +1,4 @@
-import { cloneElement, useState } from "react";
+import { cloneElement, useEffect, useState } from "react";
 import "./dropdown.scss";
 import DropdownToggleDown from "./dropdown-toggle-down.svg";
 import DropdownToggleUp from "./dropdown-toggle-up.svg";
@@ -19,6 +19,8 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
   const toggleActive = () => {
     setActive(!isActive);
   };
+
+  useEffect(() => {setSelectedIndex(props.defaultIndex)}, [props.defaultIndex])
 
   const addCustomChildClasses = (
     child: JSX.Element,

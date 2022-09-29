@@ -1,0 +1,25 @@
+@import "/src/common/colors";
+
+.b-blog-post {
+  display: flex;
+  flex-direction: column;
+  color: $b-text-dark-pink;
+  font-weight: 500;
+  .b-blog-post-image {
+    // border-radius: 10px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Prata", serif;
+    color: $b-text-darker-pink;
+  }
+}

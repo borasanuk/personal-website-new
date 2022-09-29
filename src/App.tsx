@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { AppContext } from "./AppContext";
+import { AppContext, pages } from "./AppContext";
 import Navbar from "./components/navbar/Navbar";
 
 const App = (): JSX.Element => {
@@ -12,8 +12,13 @@ const App = (): JSX.Element => {
     if (loc === "") {
       loc = "home";
     }
-    setPage(loc);
-  }, []);
+    for (let p of pages) {
+      if (loc.includes(p)) {
+        setPage(p);
+        console.log(loc.includes(p), p);
+      }
+    }
+  }, [location.pathname, setPage]);
 
   return (
     <>

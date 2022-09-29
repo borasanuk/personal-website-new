@@ -1,22 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useScrollPosition = () => {
-  const [scrollPosition, setScrollPosition] = useState<number>(0);
-
-  useEffect(() => {
-    const updateScrollPosition = () => {
-      setScrollPosition(window.scrollY);
-    };
-    window.addEventListener("scroll", updateScrollPosition);
-    return () => {
-      window.removeEventListener("scroll", updateScrollPosition);
-    };
-  }, []);
-
-  return scrollPosition;
-};
-
-export const useWindowSize = () => {
+const useWindowSize = () => {
   const [dimensions, setDimensions] = useState({width: window.innerWidth, height: window.innerHeight});
 
   useEffect(() => {
@@ -31,3 +15,5 @@ export const useWindowSize = () => {
 
   return dimensions;
 };
+
+export default useWindowSize;

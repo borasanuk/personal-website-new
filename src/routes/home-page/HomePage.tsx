@@ -1,14 +1,8 @@
-import { useContext, useEffect } from "react";
-import { AppContext } from "../../AppContext";
-import { useScrollPosition } from "../../utilities/hooks";
+import useScrollPosition from "../../hooks/useScrollPosition";
 import "./homePage.scss";
 
 const HomePage = (): JSX.Element => {
   const scrollPosition = useScrollPosition();
-  const { setPage } = useContext(AppContext);
-  useEffect(() => {
-    setPage("home");
-  }, []);
 
   return (
     <div className="b-home-container">
@@ -42,7 +36,7 @@ const HomePage = (): JSX.Element => {
               </div>
               <div className="b-showcase-text">
                 a thorough reimagination of the club's visual identity with a
-                renewed logo, design language, and website.
+                renewed logo, design language, and landing page.
               </div>
             </div>
           </div>
@@ -60,8 +54,7 @@ const HomePage = (): JSX.Element => {
                   aeon technologies
                 </div>
                 <div className="b-showcase-text text-end">
-                  a thorough reimagination of the club's visual identity with a
-                  renewed logo, design language, and website.
+                  ui/ux, frontend development, logo, branding, landing page, and other design tasks at the startup i co-founded.
                 </div>
               </div>
             </div>

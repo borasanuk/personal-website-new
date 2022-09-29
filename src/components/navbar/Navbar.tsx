@@ -1,7 +1,8 @@
 import { useContext, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AppContext, pages } from "../../AppContext";
-import { useScrollPosition, useWindowSize } from "../../utilities/hooks";
+import useScrollPosition from "../../hooks/useScrollPosition";
+import useWindowSize from "../../hooks/useWindowSize";
 import Dropdown from "../dropdown/Dropdown";
 import "./navbar.scss";
 
@@ -9,6 +10,8 @@ const Navbar = (): JSX.Element => {
   const navbarRef = useRef<HTMLDivElement>(null);
   const scrollPosition = useScrollPosition();
   const { page, setPage } = useContext(AppContext);
+  const navigate = useNavigate();
+
   const isNavbarActive = (): boolean => {
     return scrollPosition > 0 || page !== "home";
   };
@@ -34,12 +37,15 @@ const Navbar = (): JSX.Element => {
               : "")
           }
         >
-          <div className="b-navbar-logo">b</div>
+          <div className="b-navbar-logo" onClick={() => navigate("/")}>
+            b
+          </div>
           {shouldShowFullLogo() && (
             <div
               className={
                 "b-navbar-logo zero-width" + (isNavbarActive() ? "" : " hidden")
               }
+              onClick={() => navigate("/")}
             >
               orasanuk
             </div>
