@@ -1,10 +1,5 @@
 @import "/src/common/colors";
 
-a {
-  text-decoration: none;
-  color: initial;
-}
-
 .b-dropdown {
   cursor: pointer;
   display: flex;
@@ -12,6 +7,11 @@ a {
   // gap: 10px;
   align-items: flex-start;
   width: 150px;
+
+  a {
+    text-decoration: none;
+    color: initial;
+  }
 
   .b-dropdown-toggle {
     color: $b-pink-darkest;
@@ -28,7 +28,8 @@ a {
     .b-dropdown-item {
       line-height: 1;
 
-      &.selected,&:hover {
+      &.selected,
+      &:hover {
         font-weight: 600;
       }
     }

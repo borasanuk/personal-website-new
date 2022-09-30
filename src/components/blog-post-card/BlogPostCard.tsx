@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { BBlogPost } from "../../models/BBlogPost";
 import { epochToDate } from "../../utilities";
 import "./blogPostCard.scss";
@@ -36,10 +36,12 @@ const BlogPostCard = ({
   color,
   style,
 }: BlogPostCardProps): JSX.Element => {
+  const navigate = useNavigate();
+
   return (
-    <Link
-      to={"/blog/" + data.id}
-      className={"b-blog-post-card " + color}
+    <div
+      onClick={() => navigate("/blog/" + data.id)}
+      className={"b-blog-post-card nostyle-anchor " + color}
       style={style}
     >
       {/* <img src={data.img_src} className="b-blog-post-card-img" alt="" /> */}
@@ -52,7 +54,7 @@ const BlogPostCard = ({
         </div>
       </div>
       <div className="b-blog-post-card-title">{data.title}</div>
-    </Link>
+    </div>
   );
 };
 

@@ -12,6 +12,7 @@
   text-align: center;
   line-height: 1;
   transition: opacity 0.5s;
+  z-index: -1;
 
   &.hidden {
     opacity: 0;
@@ -25,6 +26,7 @@
   // justify-content: center;
   padding-top: 200px;
   background-color: $b-pink-darker;
+  border-bottom: 5px solid $b-yellow-darker;
   transition: opacity 1s;
 
   .b-masthead-title {

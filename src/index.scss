@@ -14,6 +14,10 @@ code {
     monospace;
 }
 
+a.nostyle-anchor:link, a.nostyle-anchor:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
 
 .yellow {
   color: $b-yellow;
@@ -38,4 +42,12 @@ code {
   white-space: nowrap;
   width: fit-content;
   height: fit-content;
+}
+
+.serif {
+  font-family: "Prata", serif;
+}
+
+.underline {
+  text-decoration: underline !important;
 }

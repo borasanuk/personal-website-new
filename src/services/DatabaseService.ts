@@ -1,10 +1,28 @@
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  limit,
+} from "firebase/firestore";
 import { getBytes, ref } from "firebase/storage";
 import { BBlogPost } from "../models/BBlogPost";
 import { db, storage } from "./firebaseConfig";
 
 export const getAllBlogPosts = async (): Promise<BBlogPost[]> => {
   const docsSnap = await getDocs(collection(db, "posts"));
+  const posts: BBlogPost[] = [];
+  docsSnap.forEach((doc) => {
+    posts.push(doc.data() as BBlogPost);
+  });
+  return posts;
+};
+
+export const getRecentBlogPosts = async (
+  l: number = 3
+): Promise<BBlogPost[]> => {
+  const docsSnap = await getDocs(query(collection(db, "posts"), limit(l)));
   const posts: BBlogPost[] = [];
   docsSnap.forEach((doc) => {
     posts.push(doc.data() as BBlogPost);
