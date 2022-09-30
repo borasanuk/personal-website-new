@@ -19,10 +19,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="" element={<HomePage />} />
-          <Route path="portfolio" element={<>portfolio</>} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:id" element={<BlogViewPage />} />
-          <Route path="contact" element={<>contact</>} />
           <Route path="*" element={<Navigate replace to={"/"} />} />
         </Route>
       </Routes>

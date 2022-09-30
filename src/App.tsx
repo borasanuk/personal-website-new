@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { AppContext, pages } from "./AppContext";
+import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 
 const App = (): JSX.Element => {
@@ -24,6 +25,7 @@ const App = (): JSX.Element => {
     <>
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 };
