@@ -3,7 +3,7 @@
 .b-blog-post {
   display: flex;
   flex-direction: column;
-  color: $b-text-dark-pink;
+  color: $b-text-pink;
   font-weight: 500;
   .b-blog-post-image {
     // border-radius: 10px;
@@ -20,6 +20,6 @@
   h5,
   h6 {
     font-family: "Prata", serif;
-    color: $b-text-darker-pink;
+    color: $b-text-pink-darker;
   }
 }

@@ -4,45 +4,87 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  background-color: $b-yellow;
+  align-items: flex-start;
+  width: fit-content;
+  gap: 10px;
 
-  .b-blog-post-card-img-container {
-    width: 100%;
-    height: 300px;
+  .b-blog-post-card-img {
+    height: 100px;
+    width: 100px;
     overflow: hidden;
-    img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
+    object-fit: cover;
+  }
+
+  .b-blog-post-card-title {
+    font-family: "Prata", serif;
+    font-size: 52px;
+    line-height: 1.2;
+  }
+
+  .b-blog-post-card-tags-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    .b-blog-post-card-tag {
+      font-size: 20px;
+      text-decoration: underline;
+      white-space: nowrap;
     }
   }
 
-  .b-blog-post-card-details {
-    padding: 10px;
+  .b-blog-post-card-date {
+    font-size: 20px;
+    white-space: nowrap;
+  }
 
+  &.yellow {
+    color: $b-text-yellow;
+  }
+
+  &.olive {
+    color: $b-text-olive;
+  }
+
+  &.pink {
+    color: $b-text-pink;
+  }
+  
+  &.black {
+    color: #000;
+  }
+  
+  &.white {
+    color: #fff;
+  }
+  
+  &.red {
+    color: $b-text-red;
+  }
+  
+  &.blue {
+    color: $b-text-blue;
+  }
+  
+  &.cyan {
+    color: $b-text-cyan;
+  }
+
+  @media only screen and (max-width: 942px) {
     .b-blog-post-card-title {
-      margin: 10px 0;
-      color: $b-olive-darkest;
-      font-family: "Prata", serif;
-      font-size: 28px;
-      line-height: 1.2;
+      font-size: 36px;
     }
+  }
 
-    .b-blog-post-card-tags-container {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
+  @media only screen and (max-width: 768px) {
+    .b-blog-post-card-title {
+      font-size: 36px;
+    }
+  }
 
-      .b-blog-post-card-tag {
-        display: flex;
-        padding: 3px 7px;
-        border: 1px solid $b-olive-darkest;
-        border-radius: 100px;
-        color: $b-olive-darkest;
-        font-size: 12px;
-        white-space: nowrap;
-      }
+  @media only screen and (max-width: 576px) {
+    .b-blog-post-card-title {
+      font-size: 32px;
     }
   }
 }
