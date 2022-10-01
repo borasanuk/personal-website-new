@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  background-color: $b-pink;
+  background-color: $b-peach;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,19 +10,15 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-a.nostyle-anchor:link, a.nostyle-anchor:visited {
+a.nostyle-anchor:link,
+a.nostyle-anchor:visited {
   text-decoration: inherit;
   color: inherit;
 }
-
-.yellow {
-  color: $b-yellow;
-}
-
 
 .b-bloom {
   box-shadow: 0 0 20vh 20vh $b-yellow;
@@ -35,9 +31,9 @@ a.nostyle-anchor:link, a.nostyle-anchor:visited {
 .b-chip {
   display: flex;
   padding: 3px 7px;
-  border: 1px solid $b-olive-darkest;
+  border: 1px solid $b-olive-darker;
   border-radius: 100px;
-  color: $b-olive-darkest;
+  color: $b-olive-darker;
   font-size: 12px;
   white-space: nowrap;
   width: fit-content;
@@ -50,4 +46,82 @@ a.nostyle-anchor:link, a.nostyle-anchor:visited {
 
 .underline {
   text-decoration: underline !important;
+}
+
+.bg-pink {
+  background-color: $b-pink;
+}
+
+.text-pink {
+  color: $b-pink-darker;
+}
+
+.border-pink {
+  border: 1px solid $b-pink-darker;
+  border-radius: 10px;
+}
+
+.bg-yellow {
+  background-color: $b-yellow;
+}
+
+.text-yellow {
+  color: $b-yellow-darker;
+}
+
+.border-yellow {
+  border: 1px solid $b-yellow-darker;
+  border-radius: 10px;
+}
+
+.bg-olive {
+  background-color: $b-olive;
+}
+
+.text-olive {
+  color: $b-olive-darker;
+}
+
+.border-olive {
+  border: 1px solid $b-olive-darker;
+  border-radius: 10px;
+}
+
+.bg-lime {
+  background-color: $b-lime;
+}
+
+.text-lime {
+  color: $b-lime-darker;
+}
+
+.border-lime {
+  border: 1px solid $b-lime-darker;
+  border-radius: 10px;
+}
+
+.bg-peach {
+  background-color: $b-peach;
+}
+
+.text-peach {
+  color: $b-peach-darker;
+}
+
+.border-peach {
+  border: 1px solid $b-peach-darker;
+  border-radius: 10px;
+}
+
+.bg-tan {
+  background-color: $b-tan;
+}
+
+.text-tan {
+  color: $b-tan-darker;
+}
+
+.border-tan {
+  border: 1px solid $b-tan-darker;
+  border-radius: 10px;
 }

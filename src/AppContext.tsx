@@ -1,6 +1,6 @@
 import React, { Dispatch, ReactNode, SetStateAction, useState } from "react";
 
-export const pages = ["home", "blog"];
+export const pages = ["home", "works"];
 
 interface AppState {
   page: string;

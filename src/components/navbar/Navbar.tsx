@@ -13,7 +13,8 @@ const Navbar = (): JSX.Element => {
   const navigate = useNavigate();
 
   const isNavbarActive = (): boolean => {
-    return scrollPosition > 0 || page !== "home";
+    // return scrollPosition > 0 || page !== "home";
+    return true;
   };
 
   const dimensions = useWindowSize();
@@ -27,68 +28,66 @@ const Navbar = (): JSX.Element => {
 
   return (
     <div className="b-navbar-container" ref={navbarRef}>
-      <div className="container">
-        <div
-          className={
-            "b-navbar" +
-            (isNavbarActive() ? " active" : "") +
-            (scrollPosition > window.innerHeight * 2 || page !== "home"
-              ? " background-active"
-              : "")
-          }
-        >
-          <div className="b-navbar-logo" onClick={() => navigate("/")}>
-            b
-          </div>
-          {shouldShowFullLogo() && (
-            <div
-              className={
-                "b-navbar-logo zero-width" + (isNavbarActive() ? "" : " hidden")
-              }
-              onClick={() => navigate("/")}
-            >
-              orasanuk
-            </div>
-          )}
-          {shouldShowCompactNavbar() ? (
-            <Dropdown
-              className={
-                "b-navbar-items-dropdown" + (isNavbarActive() ? "" : " hidden")
-              }
-              style={{ marginLeft: "auto" }}
-              childrenClass="b-navbar-dropdown-item"
-              defaultIndex={pages.indexOf(page)}
-            >
-              {pages.map((p) => (
-                <Link
-                  to={"/" + p}
-                  className="b-dropdown-item"
-                  key={p}
-                  onClick={() => setPage(p)}
-                >
-                  {p}
-                </Link>
-              ))}
-            </Dropdown>
-          ) : (
-            <div
-              className={
-                "b-navbar-items-container" + (isNavbarActive() ? "" : " hidden")
-              }
-            >
-              {pages.map((p) => (
-                <Link
-                  to={"/" + p}
-                  className={"b-navbar-item" + (p === page ? " selected" : "")}
-                  key={p}
-                  onClick={() => setPage(p)}
-                >
-                  {p}
-                </Link>
-              ))}
-            </div>
-          )}
+      <div
+        className={
+          "b-navbar" +
+          (isNavbarActive() ? " active" : "") +
+          (scrollPosition > window.innerHeight * 2 || page !== "home"
+            ? " background-active"
+            : "")
+        }
+      >
+        <div className="b-navbar-logo" onClick={() => navigate("/")}>
+          b
         </div>
+        {shouldShowFullLogo() && (
+          <div
+            className={
+              "b-navbar-logo zero-width" + (isNavbarActive() ? "" : " hidden")
+            }
+            onClick={() => navigate("/")}
+          >
+            orasanuk
+          </div>
+        )}
+        {shouldShowCompactNavbar() ? (
+          <Dropdown
+            className={
+              "b-navbar-items-dropdown" + (isNavbarActive() ? "" : " hidden")
+            }
+            style={{ marginLeft: "auto" }}
+            childrenClass="b-navbar-dropdown-item"
+            defaultIndex={pages.indexOf(page)}
+          >
+            {pages.map((p) => (
+              <Link
+                to={"/" + p}
+                className="b-dropdown-item"
+                key={p}
+                onClick={() => setPage(p)}
+              >
+                {p}
+              </Link>
+            ))}
+          </Dropdown>
+        ) : (
+          <div
+            className={
+              "b-navbar-items-container" + (isNavbarActive() ? "" : " hidden")
+            }
+          >
+            {pages.map((p) => (
+              <Link
+                to={"/" + p}
+                className={"b-navbar-item" + (p === page ? " selected" : "")}
+                key={p}
+                onClick={() => setPage(p)}
+              >
+                {p}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

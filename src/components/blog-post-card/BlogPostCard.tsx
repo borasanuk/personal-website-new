@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { BBlogPost } from "../../models/BBlogPost";
 import { epochToDate } from "../../utilities";
 import "./blogPostCard.scss";
@@ -28,6 +28,7 @@ export const blogPostColors: BlogPostColorOption[] = [
 interface BlogPostCardProps {
   data: BBlogPost;
   color?: BlogPostColorOption;
+  size?: "sm" | "md" | "lg" | "responsive";
   style?: CSSProperties;
 }
 
@@ -35,13 +36,14 @@ const BlogPostCard = ({
   data,
   color,
   style,
+  size,
 }: BlogPostCardProps): JSX.Element => {
   const navigate = useNavigate();
 
   return (
     <div
-      onClick={() => navigate("/blog/" + data.id)}
-      className={"b-blog-post-card nostyle-anchor " + color}
+      onClick={() => navigate("/works/" + data.id)}
+      className={"b-blog-post-card nostyle-anchor " + color + " " + size}
       style={style}
     >
       {/* <img src={data.img_src} className="b-blog-post-card-img" alt="" /> */}

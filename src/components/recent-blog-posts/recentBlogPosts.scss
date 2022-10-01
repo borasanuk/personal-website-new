@@ -1,0 +1,40 @@
+@import "/src/common/colors";
+
+.b-recent-posts {
+  display: flex;
+  flex-direction: column;
+
+  .b-recent-posts-title {
+    font-size: 28px;
+    font-family: "Prata", serif;
+
+    &.sm {
+      font-size: 20px;
+    }
+
+    &.md {
+      font-size: 28px;
+    }
+
+    &.lg {
+      font-size: 32px;
+    }
+  }
+
+  .b-recent-posts-see-all {
+    font-family: "Prata", serif;
+    font-size: 24px;
+
+    &.sm {
+      font-size: 16px;
+    }
+
+    &.md {
+      font-size: 24px;
+    }
+
+    &.lg {
+      font-size: 28px;
+    }
+  }
+}

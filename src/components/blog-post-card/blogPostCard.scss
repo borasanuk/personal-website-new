@@ -49,30 +49,30 @@
   &.pink {
     color: $b-text-pink;
   }
-  
+
   &.black {
     color: #000;
   }
-  
+
   &.white {
     color: #fff;
   }
-  
+
   &.red {
     color: $b-text-red;
   }
-  
+
   &.blue {
     color: $b-text-blue;
   }
-  
+
   &.cyan {
     color: $b-text-cyan;
   }
 
   @media only screen and (max-width: 942px) {
     .b-blog-post-card-title {
-      font-size: 36px;
+      font-size: 42px;
     }
   }
 
@@ -84,7 +84,55 @@
 
   @media only screen and (max-width: 576px) {
     .b-blog-post-card-title {
-      font-size: 32px;
+      font-size: 24px;
+    }
+  }
+
+  &.sm {
+    .b-blog-post-card-title {
+      font-size: 20px !important;
+    }
+
+    .b-blog-post-card-tags-container {
+      .b-blog-post-card-tag {
+        font-size: 16px !important;
+      }
+    }
+
+    .b-blog-post-card-date {
+      font-size: 16px !important;
+    }
+  }
+
+  &.md {
+    .b-blog-post-card-title {
+      font-size: 24px !important;
+    }
+
+    .b-blog-post-card-tags-container {
+      .b-blog-post-card-tag {
+        font-size: 18px !important;
+      }
+    }
+
+    .b-blog-post-card-date {
+      font-size: 18px !important;
+    }
+  }
+
+  &.lg {
+    .b-blog-post-card-title {
+      font-size: 30px !important;
+    }
+
+    .b-blog-post-card-tags-container {
+      .b-blog-post-card-tag {
+        font-size: 24px !important;
+      }
+    }
+
+    .b-blog-post-card-date {
+      font-size: 24px !important;
     }
   }
 }

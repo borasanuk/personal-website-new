@@ -1,0 +1,24 @@
+@import "src/common/colors";
+
+.b-featured-work {
+  display: flex;
+  flex-direction: column;
+  
+  .b-featured-title {
+    font-size: 28px;
+    font-family: "Prata", serif;
+  }
+
+  .b-featured-subtitle {
+    font-size: 18px;
+    font-family: "Prata", serif;
+  }
+
+  .b-featured-img {
+    max-width: 250px;
+    padding: 20px;
+    font-family: "Prata", serif;
+    opacity: 1;
+    filter: grayscale(0);
+  }
+}

@@ -5,6 +5,7 @@
   top: 10px;
   width: 100%;
   z-index: 999;
+  padding: 0 12px;
 
   .b-navbar {
     margin: 20px auto;
@@ -65,7 +66,7 @@
       min-height: 42px;
 
       .b-navbar-dropdown-item {
-        color: $b-pink-darkest;
+        color: $b-pink-darker;
         font-size: 20px;
       }
     }
