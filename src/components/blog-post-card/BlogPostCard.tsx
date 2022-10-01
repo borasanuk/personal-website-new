@@ -4,47 +4,27 @@ import { BBlogPost } from "../../models/BBlogPost";
 import { epochToDate } from "../../utilities";
 import "./blogPostCard.scss";
 
-type BlogPostColorOption =
-  | "pink"
-  | "yellow"
-  | "olive"
-  | "black"
-  | "white"
-  | "blue"
-  | "red"
-  | "cyan";
-
-export const blogPostColors: BlogPostColorOption[] = [
-  "pink",
-  "olive",
-  "blue",
-  "red",
-  "cyan",
-  "black",
-  "yellow",
-  "white",
-];
-
 interface BlogPostCardProps {
   data: BBlogPost;
-  color?: BlogPostColorOption;
   size?: "sm" | "md" | "lg" | "responsive";
+  className?: string;
   style?: CSSProperties;
 }
 
 const BlogPostCard = ({
   data,
-  color,
-  style,
   size,
+  ...props
 }: BlogPostCardProps): JSX.Element => {
   const navigate = useNavigate();
 
   return (
     <div
       onClick={() => navigate("/works/" + data.id)}
-      className={"b-blog-post-card nostyle-anchor " + color + " " + size}
-      style={style}
+      className={
+        "b-blog-post-card nostyle-anchor " + props.className + " " + size
+      }
+      style={props.style}
     >
       {/* <img src={data.img_src} className="b-blog-post-card-img" alt="" /> */}
       <div className="b-blog-post-card-tags-container">

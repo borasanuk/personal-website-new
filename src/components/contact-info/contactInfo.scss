@@ -1,0 +1,15 @@
+@import "src/common/colors";
+
+.b-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  mix-blend-mode: multiply;
+}
+
+@media only screen and (max-width: 768px) {
+  .b-contact {
+    flex-direction: row;
+  } 
+}

@@ -3,6 +3,8 @@ import { Outlet, useLocation } from "react-router-dom";
 import { AppContext, pages } from "./AppContext";
 import Navbar from "./components/navbar/Navbar";
 
+export const colors = ["olive", "tan", "pink", "peach", "lime"];
+
 const App = (): JSX.Element => {
   const location = useLocation();
   const { setPage } = useContext(AppContext);

@@ -3,6 +3,7 @@
 .b-recent-posts {
   display: flex;
   flex-direction: column;
+  flex: 1;
 
   .b-recent-posts-title {
     font-size: 28px;

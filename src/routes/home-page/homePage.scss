@@ -8,75 +8,85 @@
 }
 
 .b-masthead {
-  min-height: 100vh;
+  height: 100vh;
   // padding-top: 130px;
-  padding: 100px 48px 0;
-  background-color: $b-peach;
+  padding: 0 48px;
+  background-color: $b-tan;
   color: $b-peach-darker;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-direction: column;
+  // gap: 100px;
+  overflow-x: hidden;
 
   .b-masthead-title {
     font-family: "Avenue", serif;
     text-shadow: 0 0 6px rgba($b-peach-darker, 0.5);
-    font-size: clamp(64px, 6vw, 120px);
+    font-size: clamp(48px, 10vw, 120px);
     letter-spacing: 0.5px;
     text-align: center;
+    line-height: 1.3;
+    mix-blend-mode: hard-light;
+    isolation: isolate;
+    z-index: 10;
 
-    .fancy {
+    &.fancy {
       font-family: "Avenue", serif;
       width: 100%;
+      // mix-blend-mode: hard-light;
     }
   }
 
   .b-masthead-subtitle {
+    z-index: 10;
+    color: $b-peach-darker;
+    mix-blend-mode: hard-light;
     letter-spacing: 0.5px;
     font-family: "Avenue", serif;
     text-shadow: 0 0 6px rgba($b-peach-darker, 0.5);
     text-align: center;
-    font-size: clamp(34px, 3vw, 80px);
+    font-size: clamp(28px, 5vw, 80px);
+    line-height: 1;
   }
 }
 
 @media only screen and (max-width: 942px) {
   .b-masthead {
-    padding: 130px 24px 0;
+    padding: 0 24px;
     gap: 50px;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .b-masthead {
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 200px 24px 0;
+    // align-items: center;
+    padding: 0 24px;
     // gap: 20px;
 
-    .b-masthead-title {
-      text-align: center;
-      font-size: 56px;
-    }
+    // .b-masthead-title {
+    //   text-align: center;
+    //   font-size: 56px;
+    // }
 
-    .b-masthead-subtitle {
-      text-align: center;
-      font-size: 26px;
-    }
+    // .b-masthead-subtitle {
+    //   text-align: center;
+    //   font-size: 26px;
+    // }
   }
 }
 
 @media only screen and (max-width: 576px) {
   .b-masthead {
-    padding: 200px 12px;
-    
-    .b-masthead-title {
-      text-align: center;
-      font-size: 48px;
-    }
+    padding: 0 12px;
 
-    .b-masthead-subtitle {
-      text-align: center;
-      font-size: 22px;
-    }
+    // .b-masthead-title {
+    //   text-align: center;
+    //   font-size: 48px;
+    // }
+
+    // .b-masthead-subtitle {
+    //   text-align: center;
+    //   font-size: 22px;
+    // }
   }
 }

@@ -8,12 +8,12 @@ interface FeaturedWorkProps {
 
 const FeaturedWork = (props: FeaturedWorkProps) => {
   return (
-    <section className="b-featured-work text-lime p-3 p-sm-4" style={props.style}>
+    <section className="b-featured-work bg-olive border-olive text-olive p-3 p-sm-4" style={props.style}>
       <div className="b-featured-title">Featured Work</div>
       <div className="py-1"></div>
-      <img className="b-featured-img border-lime" src={AOSImage} alt="" />
+      <img className="b-featured-img border-olive" src={AOSImage} alt="" />
       <div className="py-1"></div>
-      <div className="b-featured-subtitle mx-auto">Açık Ofis Saati</div>
+      <div className="b-featured-subtitle">Açık Ofis Saati</div>
     </section>
   );
 };

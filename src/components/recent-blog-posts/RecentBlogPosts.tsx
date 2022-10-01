@@ -24,7 +24,7 @@ const RecentBlogPosts = (props: RecentBlogPostsProps) => {
           Works
         </div>
         <Link
-          to="blog"
+          to="works"
           className={
             "b-recent-posts-see-all nostyle-anchor ms-auto underline " +
             props.size

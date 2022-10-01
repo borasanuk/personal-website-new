@@ -6,18 +6,18 @@
   width: 100%;
   z-index: 999;
   padding: 0 12px;
+  // mix-blend-mode: overlay;
 
   .b-navbar {
     margin: 20px auto;
     width: 80px;
     height: 80px;
     border-radius: 75px;
-    background-color: $b-pink-darker;
     display: flex;
     align-items: flex-start;
     padding: 20px 28px;
     transition: all 0.6s;
-
+    
     &.active {
       width: 100%;
       background-color: transparent;
@@ -26,14 +26,15 @@
     }
 
     &.background-active {
-      background-color: $b-pink-darker;
+      background-color: $b-olive;
+      width: 90%;
     }
 
     .b-navbar-logo {
       cursor: pointer;
       margin-top: 2px;
       font-family: "Prata";
-      color: $b-yellow;
+      color: $b-olive-darker;
       font-size: 40px;
       line-height: 1;
       text-align: center;
@@ -48,7 +49,7 @@
       gap: 20px;
 
       .b-navbar-item {
-        color: $b-yellow;
+        color: $b-olive-darker;
         font-size: 20px;
 
         &.selected {
@@ -66,7 +67,7 @@
       min-height: 42px;
 
       .b-navbar-dropdown-item {
-        color: $b-pink-darker;
+        color: $b-olive-darker;
         font-size: 20px;
       }
     }

@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  background-color: $b-peach;
+  background-color: $b-tan;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,6 +18,11 @@ a.nostyle-anchor:link,
 a.nostyle-anchor:visited {
   text-decoration: inherit;
   color: inherit;
+}
+
+.disabled {
+  opacity: 0.5;
+  filter: grayscale(0.8);
 }
 
 .b-bloom {
@@ -58,7 +63,18 @@ a.nostyle-anchor:visited {
 
 .border-pink {
   border: 1px solid $b-pink-darker;
-  border-radius: 10px;
+  border-radius: 40px;
+}
+
+.shadow-pink {
+  box-shadow: 0 0 5px $b-pink-darker;
+}
+
+.hover-shadow-pink {
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 0 15px rgba($b-pink-darker, 0.4);
+  }
 }
 
 .bg-yellow {
@@ -71,7 +87,18 @@ a.nostyle-anchor:visited {
 
 .border-yellow {
   border: 1px solid $b-yellow-darker;
-  border-radius: 10px;
+  border-radius: 40px;
+}
+
+.shadow-yellow {
+  box-shadow: 0 0 5px $b-yellow-darker;
+}
+
+.hover-shadow-yellow {
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 0 15px rgba($b-yellow-darker, 0.4);
+  }
 }
 
 .bg-olive {
@@ -84,7 +111,18 @@ a.nostyle-anchor:visited {
 
 .border-olive {
   border: 1px solid $b-olive-darker;
-  border-radius: 10px;
+  border-radius: 40px;
+}
+
+.shadow-olive {
+  box-shadow: 0 0 5px $b-olive-darker;
+}
+
+.hover-shadow-olive {
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 0 15px rgba($b-olive-darker, 0.4);
+  }
 }
 
 .bg-lime {
@@ -97,7 +135,18 @@ a.nostyle-anchor:visited {
 
 .border-lime {
   border: 1px solid $b-lime-darker;
-  border-radius: 10px;
+  border-radius: 40px;
+}
+
+.shadow-lime {
+  box-shadow: 0 0 5px $b-lime-darker;
+}
+
+.hover-shadow-lime {
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 0 15px rgba($b-lime-darker, 0.4);
+  }
 }
 
 .bg-peach {
@@ -110,7 +159,18 @@ a.nostyle-anchor:visited {
 
 .border-peach {
   border: 1px solid $b-peach-darker;
-  border-radius: 10px;
+  border-radius: 40px;
+}
+
+.shadow-peach {
+  box-shadow: 0 0 5px $b-peach-darker;
+}
+
+.hover-shadow-peach {
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 0 15px rgba($b-peach-darker, 0.4);
+  }
 }
 
 .bg-tan {
@@ -123,5 +183,16 @@ a.nostyle-anchor:visited {
 
 .border-tan {
   border: 1px solid $b-tan-darker;
-  border-radius: 10px;
+  border-radius: 40px;
+}
+
+.shadow-tan {
+  box-shadow: 0 0 5px $b-tan-darker;
+}
+
+.hover-shadow-tan {
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 0 15px rgba($b-tan-darker, 0.4);
+  }
 }
