@@ -2,6 +2,7 @@ import { cloneElement, useEffect, useState } from "react";
 import "./dropdown.scss";
 import DropdownToggleDown from "./dropdown-toggle-down.svg";
 import DropdownToggleUp from "./dropdown-toggle-up.svg";
+import { IconChevronDown, IconChevronUp } from "@tabler/icons";
 
 interface DropdownProps {
   className?: string;
@@ -20,7 +21,9 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
     setActive(!isActive);
   };
 
-  useEffect(() => {setSelectedIndex(props.defaultIndex)}, [props.defaultIndex])
+  useEffect(() => {
+    setSelectedIndex(props.defaultIndex);
+  }, [props.defaultIndex]);
 
   const addCustomChildClasses = (
     child: JSX.Element,
@@ -43,16 +46,16 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
       onClick={toggleActive}
     >
       {isActive ? (
-        <img
-          src={DropdownToggleUp}
+        <IconChevronUp
+          // viewBox=""
+          // height={20}
           className="b-dropdown-toggle"
-          alt="dropdown-toggle"
         />
       ) : (
-        <img
-          src={DropdownToggleDown}
+        <IconChevronDown
+          // viewBox=""
+          // height={20}
           className="b-dropdown-toggle"
-          alt="dropdown-toggle"
         />
       )}
       <div className="b-dropdown-items-container">

@@ -8,8 +8,7 @@
 }
 
 .b-masthead {
-  height: 100vh;
-  // padding-top: 130px;
+  min-height: 100vh;
   padding: 0 48px;
   background-color: $b-tan;
   color: $b-peach-darker;
@@ -77,7 +76,7 @@
 
 @media only screen and (max-width: 576px) {
   .b-masthead {
-    padding: 0 12px;
+    padding: 130px 12px;
 
     // .b-masthead-title {
     //   text-align: center;

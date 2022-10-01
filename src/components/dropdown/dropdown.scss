@@ -14,9 +14,13 @@
   }
 
   .b-dropdown-toggle {
-    color: $b-pink-darker;
+    color: $b-olive-darker;
     height: 20px;
     width: 20px;
+    padding-top: 1.5px;
+    stroke-width: 2.6;
+    viewport-fit: space;
+    transform: scale(1.5);
   }
 
   .b-dropdown-items-container {
