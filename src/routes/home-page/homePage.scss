@@ -42,20 +42,20 @@
 @media only screen and (max-width: 942px) {
   .b-masthead {
     padding: 130px 24px 0;
-    gap: 20px;
+    gap: 50px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .b-masthead {
     flex-direction: column-reverse;
     align-items: center;
-    padding: 130px 24px 0;
-    gap: 20px;
+    padding: 200px 24px 0;
+    // gap: 20px;
 
     .b-masthead-title {
       text-align: center;
-      font-size: 48px;
+      font-size: 56px;
     }
 
     .b-masthead-subtitle {
@@ -67,7 +67,16 @@
 
 @media only screen and (max-width: 576px) {
   .b-masthead {
-    padding: 140px 12px;
-    gap: 40px;
+    padding: 200px 12px;
+    
+    .b-masthead-title {
+      text-align: center;
+      font-size: 48px;
+    }
+
+    .b-masthead-subtitle {
+      text-align: center;
+      font-size: 22px;
+    }
   }
 }

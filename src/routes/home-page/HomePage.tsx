@@ -2,11 +2,14 @@ import RecentBlogPosts from "../../components/recent-blog-posts/RecentBlogPosts"
 import AbstractGradient from "../../common/gradient.png";
 import "./homePage.scss";
 import FeaturedWork from "../../components/featured-work/FeaturedWork";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const HomePage = (): JSX.Element => {
+  const windowDimensions = useWindowSize();
+
   return (
     <div className="b-masthead">
-      <div className="d-flex flex-wrap" style={{ position: "relative" }}>
+      <div className="d-flex flex-wrap flex-column flex-md-row gap-5 gap-md-0" style={{ position: "relative" }}>
         <FeaturedWork style={{ zIndex: 1 }} />
         <img
           src={AbstractGradient}
@@ -23,7 +26,7 @@ const HomePage = (): JSX.Element => {
           className="border-olive bg-olive text-olive p-3 p-sm-4 ms-0 ms-md-auto"
           style={{ zIndex: 1 }}
         >
-          <RecentBlogPosts size="sm" />
+          <RecentBlogPosts size={windowDimensions.width > 1200 ? "md" : "sm"} />
         </section>
       </div>
       <section>

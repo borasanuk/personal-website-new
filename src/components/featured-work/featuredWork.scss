@@ -3,7 +3,7 @@
 .b-featured-work {
   display: flex;
   flex-direction: column;
-  
+
   .b-featured-title {
     font-size: 28px;
     font-family: "Prata", serif;
@@ -20,5 +20,11 @@
     font-family: "Prata", serif;
     opacity: 1;
     filter: grayscale(0);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .b-featured-work {
+    align-items: center;
   }
 }
