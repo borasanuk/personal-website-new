@@ -1,13 +1,10 @@
 import RecentBlogPosts from "../../components/recent-blog-posts/RecentBlogPosts";
-import AbstractGradient from "../../common/gradient.png";
+import BackgroundImg from "./bg.svg";
 import "./homePage.scss";
-import FeaturedWork from "../../components/featured-work/FeaturedWork";
 import useWindowSize from "../../hooks/useWindowSize";
 import ContactInfo from "../../components/contact-info/ContactInfo";
 
 const HomePage = (): JSX.Element => {
-  const windowDimensions = useWindowSize();
-
   return (
     <div className="b-masthead">
       <section>
@@ -34,17 +31,17 @@ const HomePage = (): JSX.Element => {
         </section>
         <ContactInfo style={{ zIndex: 1 }} />
 
-        <img
+        {/* <img
           src={AbstractGradient}
+          className="b-masthead-img"
           style={{
             position: "absolute",
             height: "200%",
             right: "-160px",
             bottom: "-50%",
-            filter: "blur(80px) saturate(2.5) hue-rotate(240deg)",
           }}
           alt=""
-        />
+        /> */}
       </div>
     </div>
   );

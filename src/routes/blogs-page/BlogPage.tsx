@@ -37,7 +37,8 @@ const BlogPostsPage = (): JSX.Element => {
             style={{
               transition: "all 0.2s ease-in-out",
               width: windowDimensions.width > 768 ? "fit-content" : "100%",
-              minWidth: "80%",
+              minWidth: "70%",
+              opacity: 0.9,
             }}
           >
             <BlogPostCard

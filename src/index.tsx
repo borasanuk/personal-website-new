@@ -16,7 +16,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <AppContextProvider>
     <BrowserRouter>
-      <Navbar />
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="" element={<HomePage />} />

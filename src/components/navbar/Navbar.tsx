@@ -60,14 +60,16 @@ const Navbar = (): JSX.Element => {
             defaultIndex={pages.indexOf(page)}
           >
             {pages.map((p) => (
-              <Link
-                to={"/" + p}
+              <div
                 className="b-dropdown-item"
                 key={p}
-                onClick={() => setPage(p)}
+                onClick={() => {
+                  setPage(p);
+                  navigate(p === "home" ? "/" : p);
+                }}
               >
                 {p}
-              </Link>
+              </div>
             ))}
           </Dropdown>
         ) : (

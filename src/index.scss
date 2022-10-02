@@ -3,10 +3,40 @@
 body {
   margin: 0;
   background-color: $b-tan;
+  // min-height: 100vh;
+  // @supports (-webkit-touch-callout: none) {
+  //   & {
+  //     min-height: -webkit-fill-available !important;
+  //   }
+  // }
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+}
+
+.home-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-image: url("./common/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition: all 1s;
+  opacity: 1;
+  filter: saturate(1.7) brightness(2);
+  -webkit-filter: saturate(1.7) brightness(1.2) blur(3px);
+  // mix-blend-mode: normal;
+
+  &.hidden {
+    transition: all 0.3s;
+    opacity: 0;
+  }
+}
+
+.works-bg {
+  background-color: $b-tan;
 }
 
 code {

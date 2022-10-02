@@ -7,7 +7,7 @@ export const colors = ["olive", "tan", "pink", "peach", "lime"];
 
 const App = (): JSX.Element => {
   const location = useLocation();
-  const { setPage } = useContext(AppContext);
+  const { page, setPage } = useContext(AppContext);
 
   useEffect(() => {
     let loc = location.pathname.slice(1);
@@ -23,10 +23,11 @@ const App = (): JSX.Element => {
   }, [location.pathname, setPage]);
 
   return (
-    <>
+    <div style={{position: "relative", minHeight: "100vh"}}>
+      <div className={"home-bg " + (page === "home" ? "" : " hidden")}></div>
       <Navbar />
       <Outlet />
-    </>
+    </div>
   );
 };
 

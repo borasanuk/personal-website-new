@@ -8,15 +8,15 @@
 }
 
 .b-masthead {
-  min-height: 100vh;
   padding: 0 48px;
-  background-color: $b-tan;
+  // background-color: $b-tan;
+  min-height: 100vh;
+  // min-height: -webkit-fill-available;
   color: $b-peach-darker;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-direction: column;
-  // gap: 100px;
-  overflow-x: hidden;
+  gap: 20px;
 
   .b-masthead-title {
     font-family: "Avenue", serif;
@@ -32,7 +32,6 @@
     &.fancy {
       font-family: "Avenue", serif;
       width: 100%;
-      // mix-blend-mode: hard-light;
     }
   }
 
@@ -40,6 +39,7 @@
     z-index: 10;
     color: $b-peach-darker;
     mix-blend-mode: hard-light;
+    isolation: isolate;
     letter-spacing: 0.5px;
     font-family: "Avenue", serif;
     text-shadow: 0 0 6px rgba($b-peach-darker, 0.5);
