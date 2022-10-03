@@ -1,16 +1,21 @@
 @import "/src/common/colors";
 
-.b-blog-post {
+.b-blog-view {
   display: flex;
   flex-direction: column;
-  color: $b-text-pink;
+  width: 100%;
+  // color: $b-text-pink;
+  max-width: 1000px;
   font-weight: 500;
-  .b-blog-post-image {
-    // border-radius: 10px;
+  transition: all 0.2s;
+
+  .b-blog-view-image {
+    border-radius: 10px;
   }
 
   img {
     width: 100%;
+    border-radius: 10px;
   }
 
   h1,
@@ -20,6 +25,10 @@
   h5,
   h6 {
     font-family: "Prata", serif;
-    color: $b-text-pink-darker;
+    margin-bottom: 30px;
+    // color: $b-text-pink-darker;
+  }
+  p {
+    margin-bottom: 30px;
   }
 }

@@ -1,10 +1,17 @@
-import RecentBlogPosts from "../../components/recent-blog-posts/RecentBlogPosts";
-import BackgroundImg from "./bg.svg";
-import "./homePage.scss";
-import useWindowSize from "../../hooks/useWindowSize";
+import { useContext, useEffect } from "react";
+import { AppContext } from "../../AppContext";
 import ContactInfo from "../../components/contact-info/ContactInfo";
+import RecentBlogPosts from "../../components/recent-blog-posts/RecentBlogPosts";
+import "./homePage.scss";
 
 const HomePage = (): JSX.Element => {
+  const { setNavbarColorway, setShouldRandomizeDropdownColor } = useContext(AppContext);
+
+  useEffect(() => {
+    setNavbarColorway({ background: undefined, text: "olive" });
+    setShouldRandomizeDropdownColor(false);
+  }, [setNavbarColorway, setShouldRandomizeDropdownColor]);
+
   return (
     <div className="b-masthead">
       <section>

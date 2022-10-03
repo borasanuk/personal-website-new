@@ -1,6 +1,8 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { colors } from "../../App";
 import { AppContext, pages } from "../../AppContext";
+import { getColorwayClasses } from "../../common/colorway";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import useWindowSize from "../../hooks/useWindowSize";
 import Dropdown from "../dropdown/Dropdown";
@@ -9,8 +11,14 @@ import "./navbar.scss";
 const Navbar = (): JSX.Element => {
   const navbarRef = useRef<HTMLDivElement>(null);
   const scrollPosition = useScrollPosition();
-  const { page, setPage } = useContext(AppContext);
+  const { page, setPage, navbarColorway, shouldRandomizeDropdownColor } =
+    useContext(AppContext);
   const navigate = useNavigate();
+  const [randomDropdownColor] = useState(
+    colors[Math.floor(Math.random() * colors.length)]
+  );
+
+  // useEffect(() => )
 
   const isNavbarActive = (): boolean => {
     // return scrollPosition > 0 || page !== "home";
@@ -34,7 +42,8 @@ const Navbar = (): JSX.Element => {
           (isNavbarActive() ? " active" : "") +
           (scrollPosition > window.innerHeight * 2 || page !== "home"
             ? " background-active"
-            : "")
+            : "") +
+          getColorwayClasses(navbarColorway)
         }
       >
         <div className="b-navbar-logo" onClick={() => navigate("/")}>
@@ -53,7 +62,19 @@ const Navbar = (): JSX.Element => {
         {shouldShowCompactNavbar() ? (
           <Dropdown
             className={
-              "b-navbar-items-dropdown" + (isNavbarActive() ? "" : " hidden")
+              "b-navbar-items-dropdown" +
+              (isNavbarActive() ? "" : " hidden") +
+              getColorwayClasses({
+                border: shouldRandomizeDropdownColor
+                  ? randomDropdownColor
+                  : navbarColorway.text,
+                background: shouldRandomizeDropdownColor
+                  ? randomDropdownColor
+                  : navbarColorway.text,
+                text: shouldRandomizeDropdownColor
+                  ? randomDropdownColor
+                  : navbarColorway.text,
+              })
             }
             style={{ marginLeft: "auto" }}
             childrenClass="b-navbar-dropdown-item"
@@ -81,7 +102,11 @@ const Navbar = (): JSX.Element => {
             {pages.map((p) => (
               <Link
                 to={"/" + p}
-                className={"b-navbar-item" + (p === page ? " selected" : "")}
+                className={
+                  "b-navbar-item nostyle-anchor" +
+                  (p === page ? " selected" : "") +
+                  getColorwayClasses({ text: navbarColorway.text })
+                }
                 key={p}
                 onClick={() => setPage(p)}
               >

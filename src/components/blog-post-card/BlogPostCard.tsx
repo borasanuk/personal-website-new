@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
+import { Colorway, getColorwayClasses } from "../../common/colorway";
 import { BBlogPost } from "../../models/BBlogPost";
 import { epochToDate } from "../../utilities";
 import "./blogPostCard.scss";
@@ -8,7 +9,9 @@ interface BlogPostCardProps {
   data: BBlogPost;
   size?: "sm" | "md" | "lg" | "responsive";
   className?: string;
+  colorway?: Colorway;
   style?: CSSProperties;
+  passColorwayToBlogView?: boolean;
 }
 
 const BlogPostCard = ({
@@ -17,12 +20,23 @@ const BlogPostCard = ({
   ...props
 }: BlogPostCardProps): JSX.Element => {
   const navigate = useNavigate();
-
+  
   return (
     <div
-      onClick={() => navigate("/works/" + data.id)}
+      onClick={() =>
+        navigate("/works/" + data.id, {
+          state: {
+            colorway: props.colorway,
+          },
+        })
+      }
       className={
-        "b-blog-post-card nostyle-anchor " + props.className + " " + size
+        "b-blog-post-card nostyle-anchor " +
+        props.className +
+        " " +
+        size +
+        " " +
+        getColorwayClasses(props.colorway)
       }
       style={props.style}
     >

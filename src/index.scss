@@ -15,7 +15,8 @@ body {
 }
 
 .home-bg {
-  position: absolute;
+  position: fixed;
+  z-index: -1;
   right: 0;
   top: 0;
   left: 0;
@@ -31,7 +32,7 @@ body {
 
   &.hidden {
     transition: all 0.3s;
-    opacity: 0;
+    opacity: 0.5;
   }
 }
 
@@ -225,4 +226,37 @@ a.nostyle-anchor:visited {
   &:hover {
     box-shadow: 0 0 15px rgba($b-tan-darker, 0.4);
   }
+}
+
+.bg-snow {
+  background-color: $b-snow;
+}
+
+.text-snow {
+  color: $b-snow-darker;
+}
+
+.border-snow {
+  border: 1px solid $b-snow-darker;
+  border-radius: 40px;
+}
+
+.shadow-snow {
+  box-shadow: 0 0 5px $b-snow-darker;
+}
+
+.hover-shadow-snow {
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 0 15px rgba($b-snow-darker, 0.4);
+  }
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.border-black {
+  border: 1px solid #000;
+  border-radius: 40px;
 }

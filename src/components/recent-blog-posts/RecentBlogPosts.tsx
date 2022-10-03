@@ -1,6 +1,6 @@
 import { IconChevronRight } from "@tabler/icons";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BBlogPost } from "../../models/BBlogPost";
 import { getRecentBlogPosts } from "../../services/DatabaseService";
 import BlogPostCard from "../blog-post-card/BlogPostCard";
@@ -12,7 +12,8 @@ interface RecentBlogPostsProps {
 
 const RecentBlogPosts = (props: RecentBlogPostsProps) => {
   const [recentPosts, setRecentPosts] = useState<BBlogPost[]>([]);
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     getRecentBlogPosts().then((res) => setRecentPosts(res));
   }, []);
@@ -20,9 +21,7 @@ const RecentBlogPosts = (props: RecentBlogPostsProps) => {
   return (
     <div className="b-recent-posts">
       <div className="d-flex align-items-center">
-        <div className={"b-recent-posts-title " + props.size}>
-          Works
-        </div>
+        <div className={"b-recent-posts-title " + props.size}>Works</div>
         <Link
           to="works"
           className={
@@ -35,12 +34,14 @@ const RecentBlogPosts = (props: RecentBlogPostsProps) => {
       </div>
       <hr />
       {recentPosts.map((data, index) => (
-        <BlogPostCard
-          data={data}
-          key={data.id}
-          size={props.size}
-          style={{ marginTop: index > 0 ? 30 : 10 }}
-        />
+        <div className="d-flex align-items-end gap-3" key={data.id} onClick={() => navigate("/works/" + data.id)}>
+          <BlogPostCard
+            data={data}
+            size={props.size}
+            style={{ marginTop: index > 0 ? 30 : 10 }}
+          />
+          <IconChevronRight size={22} stroke={1.5} style={{marginBottom: 1}} />
+        </div>
       ))}
     </div>
   );

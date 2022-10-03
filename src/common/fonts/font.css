@@ -8,24 +8,6 @@
 }
 
 @font-face {
-  font-family: 'Avango';
-  src: url('./Avango/AvangoDisplaySerif-Bold.woff2') format('woff2'),
-      url('./Avango/AvangoDisplaySerif-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Stylish Delight';
-  src: url('./StylishDelight/StylishDelight-Regular.woff2') format('woff2'),
-      url('./StylishDelight/StylishDelight-Regular.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Avenue';
   src: url('./Avenue/MADEAvenuePERSONALUSE-Regular.woff2') format('woff2'),
       url('./Avenue/MADEAvenuePERSONALUSE-Regular.woff') format('woff');

@@ -17,24 +17,22 @@
     align-items: flex-start;
     padding: 20px 28px;
     transition: all 0.6s;
-    
+
     &.active {
       width: 100%;
-      background-color: transparent;
       padding-left: 35px;
       padding-right: 20px;
     }
 
-    &.background-active {
-      background-color: $b-olive;
-      width: 95%;
+    &.no-bg {
+      background-color: transparent;
     }
 
     .b-navbar-logo {
       cursor: pointer;
       margin-top: 2px;
       font-family: "Prata";
-      color: $b-olive-darker;
+      // color: $b-olive-darker;
       font-size: 40px;
       line-height: 1;
       text-align: center;
@@ -49,7 +47,7 @@
       gap: 20px;
 
       .b-navbar-item {
-        color: $b-olive-darker;
+        // color: $b-olive-darker;
         font-size: 20px;
 
         &.selected {
@@ -59,15 +57,12 @@
     }
 
     .b-navbar-items-dropdown {
-      border: 1px solid $b-yellow;
-      background-color: $b-yellow;
       padding: 10px 15px;
       border-radius: 21px;
       transition: opacity 0.6s;
       min-height: 42px;
 
       .b-navbar-dropdown-item {
-        color: $b-olive-darker;
         font-size: 20px;
       }
     }
@@ -75,9 +70,8 @@
 
   a {
     text-decoration: none;
-    color: initial;
   }
-  
+
   .hidden {
     opacity: 0;
   }

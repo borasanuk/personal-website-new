@@ -24,6 +24,7 @@ const BlogPostsPage = (): JSX.Element => {
         const color = colors[index % colors.length];
         return (
           <div
+            key={index}
             className={
               "d-flex gap-3 item " +
               (active !== -1 && index !== active ? "disabled" : "")
@@ -35,7 +36,7 @@ const BlogPostsPage = (): JSX.Element => {
               setActive(-1);
             }}
             style={{
-              transition: "all 0.2s ease-in-out",
+              transition: "all 0.2s ease-in",
               width: windowDimensions.width > 768 ? "fit-content" : "100%",
               minWidth: "70%",
               opacity: 0.9,
@@ -44,21 +45,20 @@ const BlogPostsPage = (): JSX.Element => {
             <BlogPostCard
               data={data}
               key={data.id}
-              className={
-                "bg-" +
-                color +
-                " border-" +
-                color +
-                " text-" +
-                color +
-                " hover-shadow-" +
-                color +
-                " p-4 w-100"
-              }
-              style={{
-                // transition: "all 0.2s ease-in-out",
-                // width: windowDimensions.width > 768 ? "fit-content" : "100%",
+              colorway={{
+                border: color,
+                background: color,
+                text: color,
+                hoverShadow: color,
               }}
+              className="p-4 w-100"
+              passColorwayToBlogView
+              style={
+                {
+                  // transition: "all 0.2s ease-in-out",
+                  // width: windowDimensions.width > 768 ? "fit-content" : "100%",
+                }
+              }
             />
             <div
               className={

@@ -70,15 +70,21 @@
     color: $b-text-cyan;
   }
 
+  @media only screen and (max-width: 1200px) {
+    .b-blog-post-card-title {
+      font-size: 36px;
+    }
+  }
+
   @media only screen and (max-width: 942px) {
     .b-blog-post-card-title {
-      font-size: 42px;
+      font-size: 32px;
     }
   }
 
   @media only screen and (max-width: 768px) {
     .b-blog-post-card-title {
-      font-size: 36px;
+      font-size: 28px;
     }
   }
 

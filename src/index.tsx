@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import App from "./App";
 import { AppContextProvider } from "./AppContext";
-import Navbar from "./components/navbar/Navbar";
 import "./index.scss";
 import "./common/fonts/font.css";
 import BlogViewPage from "./routes/blog-view-page/BlogViewPage";
