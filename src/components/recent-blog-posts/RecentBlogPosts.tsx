@@ -21,7 +21,7 @@ const RecentBlogPosts = (props: RecentBlogPostsProps) => {
   return (
     <div className="b-recent-posts">
       <div className="d-flex align-items-center">
-        <div className={"b-recent-posts-title " + props.size}>Works</div>
+        <div className={"b-recent-posts-title " + props.size}>Recent Works</div>
         <Link
           to="works"
           className={

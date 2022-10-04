@@ -1,15 +1,21 @@
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { AppContext } from "../../AppContext";
-import { Colorway, getColorwayClasses } from "../../common/colorway";
+import {
+  Colorway,
+  getColorwayClasses
+} from "../../common/colorway";
 import BlogView from "../../components/blog-view/BlogView";
 import { BBlogPost } from "../../models/BBlogPost";
 import { getBlogPost } from "../../services/DatabaseService";
 import "./blogViewPage.scss";
 
 const BlogViewPage = () => {
-  const { setNavbarColorway, setShouldRandomizeDropdownColor } =
-    useContext(AppContext);
+  const {
+    setNavbarColorway,
+    setShouldRandomizeDropdownColor,
+    setMetaThemeColor,
+  } = useContext(AppContext);
   const params = useParams();
   const [data, setData] = useState<BBlogPost>();
   const location = useLocation();
@@ -27,8 +33,9 @@ const BlogViewPage = () => {
 
   useEffect(() => {
     setNavbarColorway({ ...colorway, border: colorway.text });
+    setMetaThemeColor(colorway.background!);
     setShouldRandomizeDropdownColor(true);
-  }, [colorway, setNavbarColorway, setShouldRandomizeDropdownColor]);
+  }, [colorway, setMetaThemeColor, setNavbarColorway, setShouldRandomizeDropdownColor]);
 
   useEffect(() => {
     if (params.id) {
@@ -40,8 +47,8 @@ const BlogViewPage = () => {
 
   const togglePrefersReducedColor = () => {
     setReadingColorway(prefersReducedColor ? colorway : { background: "snow" });
-    setPrefersReducedColor(!prefersReducedColor)
-  }
+    setPrefersReducedColor(!prefersReducedColor);
+  };
 
   return (
     <div
@@ -78,9 +85,7 @@ const BlogViewPage = () => {
           togglePrefersReducedColor();
         }}
       >
-        {prefersReducedColor
-          ? "click again if you regret doing that"
-          : "click this if you hate colors, ecre"}
+        {prefersReducedColor ? "view in color" : "view in b&w"}
       </div>
     </div>
   );

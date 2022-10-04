@@ -5,12 +5,17 @@ import RecentBlogPosts from "../../components/recent-blog-posts/RecentBlogPosts"
 import "./homePage.scss";
 
 const HomePage = (): JSX.Element => {
-  const { setNavbarColorway, setShouldRandomizeDropdownColor } = useContext(AppContext);
+  const {
+    setNavbarColorway,
+    setShouldRandomizeDropdownColor,
+    setMetaThemeColor,
+  } = useContext(AppContext);
 
   useEffect(() => {
     setNavbarColorway({ background: undefined, text: "olive" });
+    setMetaThemeColor("tan");
     setShouldRandomizeDropdownColor(false);
-  }, [setNavbarColorway, setShouldRandomizeDropdownColor]);
+  }, [setMetaThemeColor, setNavbarColorway, setShouldRandomizeDropdownColor]);
 
   return (
     <div className="b-masthead">

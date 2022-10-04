@@ -13,7 +13,7 @@ import { db, storage } from "./firebaseConfig";
 
 export const getAllBlogPosts = async (): Promise<BBlogPost[]> => {
   const docsSnap = await getDocs(
-    query(collection(db, "posts"), orderBy("datetime", "desc"))
+    query(collection(db, "posts"), orderBy("date", "desc"))
   );
   const posts: BBlogPost[] = [];
   docsSnap.forEach((doc) => {
@@ -25,7 +25,7 @@ export const getAllBlogPosts = async (): Promise<BBlogPost[]> => {
 export const getRecentBlogPosts = async (
   l: number = 3
 ): Promise<BBlogPost[]> => {
-  const docsSnap = await getDocs(query(collection(db, "posts"), orderBy("datetime", "desc"), limit(l)));
+  const docsSnap = await getDocs(query(collection(db, "posts"), orderBy("date", "desc"), limit(l)));
   const posts: BBlogPost[] = [];
   docsSnap.forEach((doc) => {
     posts.push(doc.data() as BBlogPost);
@@ -41,7 +41,7 @@ export const getBlogPost = async (
     return undefined;
   }
   const data = (await docSnap.data()) as BBlogPost;
-  const contentRef = ref(storage, "posts/" + id + ".md");
+  const contentRef = ref(storage, "posts/" + id + "/content.md");
   const bytes = await getBytes(contentRef);
   const decoder = new TextDecoder("utf-8");
   const decodedContent = decoder.decode(bytes);

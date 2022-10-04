@@ -1,7 +1,8 @@
 import { IconChevronRight } from "@tabler/icons";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { colors } from "../../App";
+import { AppContext } from "../../AppContext";
 import BlogPostCard from "../../components/blog-post-card/BlogPostCard";
 import useWindowSize from "../../hooks/useWindowSize";
 import { BBlogPost } from "../../models/BBlogPost";
@@ -9,6 +10,7 @@ import { getAllBlogPosts } from "../../services/DatabaseService";
 import "./blogPage.scss";
 
 const BlogPostsPage = (): JSX.Element => {
+  const { setMetaThemeColor } = useContext(AppContext);
   const [postData, setPostData] = useState<BBlogPost[]>([]);
   const [active, setActive] = useState(-1);
   const navigate = useNavigate();
@@ -16,6 +18,7 @@ const BlogPostsPage = (): JSX.Element => {
 
   useEffect(() => {
     getAllBlogPosts().then((data) => setPostData(data));
+    setMetaThemeColor("tan");
   }, []);
 
   return (

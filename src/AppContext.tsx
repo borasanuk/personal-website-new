@@ -1,5 +1,5 @@
 import React, { Dispatch, ReactNode, SetStateAction, useState } from "react";
-import { Colorway } from "./common/colorway";
+import { colorValues, Colorway } from "./common/colorway";
 
 export const pages = ["home", "works"];
 
@@ -8,6 +8,7 @@ interface AppState {
   setPage: Dispatch<SetStateAction<string>>;
   navbarColorway: Colorway;
   setNavbarColorway: Dispatch<SetStateAction<Colorway>>;
+  setMetaThemeColor: (color: string) => void;
   shouldRandomizeDropdownColor: boolean;
   setShouldRandomizeDropdownColor: Dispatch<SetStateAction<boolean>>;
 }
@@ -26,6 +27,11 @@ export const AppContextProvider = ({ children }: AppProviderProps) => {
     text: "olive",
   });
 
+  const setMetaThemeColor = (color: string) => {
+    const scheme = document.querySelector('meta[name="theme-color"]');
+    scheme?.setAttribute("content", colorValues[color as keyof typeof colorValues]);
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -33,6 +39,7 @@ export const AppContextProvider = ({ children }: AppProviderProps) => {
         setPage,
         navbarColorway,
         setNavbarColorway,
+        setMetaThemeColor,
         shouldRandomizeDropdownColor,
         setShouldRandomizeDropdownColor,
       }}
