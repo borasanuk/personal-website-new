@@ -35,7 +35,7 @@ const BlogViewPage = () => {
     setNavbarColorway({ ...colorway, border: colorway.text });
     setMetaThemeColor(colorway.background!);
     setShouldRandomizeDropdownColor(true);
-  }, [colorway, setMetaThemeColor, setNavbarColorway, setShouldRandomizeDropdownColor]);
+  }, [colorway]);
 
   useEffect(() => {
     if (params.id) {

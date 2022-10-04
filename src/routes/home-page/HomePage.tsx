@@ -15,7 +15,7 @@ const HomePage = (): JSX.Element => {
     setNavbarColorway({ background: undefined, text: "olive" });
     setMetaThemeColor("tan");
     setShouldRandomizeDropdownColor(false);
-  }, [setMetaThemeColor, setNavbarColorway, setShouldRandomizeDropdownColor]);
+  }, []);
 
   return (
     <div className="b-masthead">
