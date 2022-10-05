@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { AppContext, pages } from "./AppContext";
 import Navbar from "./components/navbar/Navbar";
+import { MantineProvider } from "@mantine/core";
 
 const App = (): JSX.Element => {
   const location = useLocation();
@@ -21,11 +22,13 @@ const App = (): JSX.Element => {
   }, [location.pathname, setPage]);
 
   return (
-    <div style={{position: "relative", minHeight: "100vh"}}>
-      <div className={"home-bg " + (page === "home" ? "" : " hidden")}></div>
-      <Navbar />
-      <Outlet />
-    </div>
+    <MantineProvider>
+      <div style={{ position: "relative", minHeight: "100vh" }}>
+        <div className={"home-bg " + (page === "home" ? "" : " hidden")}></div>
+        <Navbar />
+        <Outlet />
+      </div>
+    </MantineProvider>
   );
 };
 

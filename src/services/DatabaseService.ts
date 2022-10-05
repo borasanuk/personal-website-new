@@ -19,6 +19,7 @@ export const getAllBlogPosts = async (): Promise<BBlogPost[]> => {
   docsSnap.forEach((doc) => {
     posts.push(doc.data() as BBlogPost);
   });
+
   return posts;
 };
 

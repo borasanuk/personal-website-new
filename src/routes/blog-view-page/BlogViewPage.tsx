@@ -1,7 +1,12 @@
+import { Loader } from "@mantine/core";
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { AppContext } from "../../AppContext";
-import { Colorway, getColorwayClasses } from "../../common/colorway";
+import {
+  colorValues,
+  Colorway,
+  getColorwayClasses,
+} from "../../common/colorway";
 import BlogView from "../../components/blog-view/BlogView";
 import { BBlogPost } from "../../models/BBlogPost";
 import { getBlogPost } from "../../services/DatabaseService";
@@ -62,7 +67,7 @@ const BlogViewPage = () => {
     >
       <div className="py-5"></div>
       <div className="py-3"></div>
-      {data && (
+      {data ? (
         <BlogView
           data={data}
           className="container"
@@ -71,6 +76,13 @@ const BlogViewPage = () => {
             text: colorway.text,
           }}
         />
+      ) : (
+        <div style={{ position: "absolute", right: "calc(50% - 30px)", top: "50%" }}>
+          <Loader
+            size={60}
+            color={colorValues[(colorway.text + "Darker") as keyof typeof colorValues]}
+          />
+        </div>
       )}
     </div>
   );
