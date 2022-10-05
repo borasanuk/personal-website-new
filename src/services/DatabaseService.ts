@@ -19,13 +19,18 @@ export const getAllBlogPosts = async (): Promise<BBlogPost[]> => {
   docsSnap.forEach((doc) => {
     posts.push(doc.data() as BBlogPost);
   });
+  for (let i = 0; i < 10; i++) {
+    posts.push(posts[0]);
+  }
   return posts;
 };
 
 export const getRecentBlogPosts = async (
   l: number = 3
 ): Promise<BBlogPost[]> => {
-  const docsSnap = await getDocs(query(collection(db, "posts"), orderBy("date", "desc"), limit(l)));
+  const docsSnap = await getDocs(
+    query(collection(db, "posts"), orderBy("date", "desc"), limit(l))
+  );
   const posts: BBlogPost[] = [];
   docsSnap.forEach((doc) => {
     posts.push(doc.data() as BBlogPost);

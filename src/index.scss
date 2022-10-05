@@ -84,6 +84,10 @@ a.nostyle-anchor:visited {
   text-decoration: underline !important;
 }
 
+.bg-pink-lighter {
+  background-color: $b-pink-lighter;
+}
+
 .bg-pink {
   background-color: $b-pink;
 }
@@ -106,6 +110,10 @@ a.nostyle-anchor:visited {
   &:hover {
     box-shadow: 0 0 15px rgba($b-pink-darker, 0.4);
   }
+}
+
+.bg-yellow-lighter {
+  background-color: $b-yellow-lighter;
 }
 
 .bg-yellow {
@@ -132,6 +140,10 @@ a.nostyle-anchor:visited {
   }
 }
 
+.bg-olive-lighter {
+  background-color: $b-olive-lighter;
+}
+
 .bg-olive {
   background-color: $b-olive;
 }
@@ -154,6 +166,10 @@ a.nostyle-anchor:visited {
   &:hover {
     box-shadow: 0 0 15px rgba($b-olive-darker, 0.4);
   }
+}
+
+.bg-lime-lighter {
+  background-color: $b-lime-lighter;
 }
 
 .bg-lime {
@@ -180,6 +196,10 @@ a.nostyle-anchor:visited {
   }
 }
 
+.bg-peach-lighter {
+  background-color: $b-peach-lighter;
+}
+
 .bg-peach {
   background-color: $b-peach;
 }
@@ -204,6 +224,10 @@ a.nostyle-anchor:visited {
   }
 }
 
+.bg-tan-lighter {
+  background-color: $b-tan-lighter;
+}
+
 .bg-tan {
   background-color: $b-tan;
 }
@@ -226,6 +250,38 @@ a.nostyle-anchor:visited {
   &:hover {
     box-shadow: 0 0 15px rgba($b-tan-darker, 0.4);
   }
+}
+
+.bg-blue-lighter {
+  background-color: $b-blue-lighter;
+}
+
+.bg-blue {
+  background-color: $b-blue;
+}
+
+.text-blue {
+  color: $b-blue-darker;
+}
+
+.border-blue {
+  border: 1px solid $b-blue-darker;
+  border-radius: 40px;
+}
+
+.shadow-blue {
+  box-shadow: 0 0 5px $b-blue-darker;
+}
+
+.hover-shadow-blue {
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 0 15px rgba($b-blue-darker, 0.4);
+  }
+}
+
+.bg-snow-lighter {
+  background-color: $b-snow-lighter;
 }
 
 .bg-snow {

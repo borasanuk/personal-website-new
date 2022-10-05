@@ -1,10 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { AppContext } from "../../AppContext";
-import {
-  Colorway,
-  getColorwayClasses
-} from "../../common/colorway";
+import { Colorway, getColorwayClasses } from "../../common/colorway";
 import BlogView from "../../components/blog-view/BlogView";
 import { BBlogPost } from "../../models/BBlogPost";
 import { getBlogPost } from "../../services/DatabaseService";
@@ -19,7 +16,7 @@ const BlogViewPage = () => {
   const params = useParams();
   const [data, setData] = useState<BBlogPost>();
   const location = useLocation();
-  const [colorway] = useState<Colorway>(
+  const [colorway, setColorway] = useState<Colorway>(
     location.state
       ? (location.state as { colorway: Colorway }).colorway
       : {
@@ -27,15 +24,23 @@ const BlogViewPage = () => {
           text: "olive",
         }
   );
-  const [readingColorway, setReadingColorway] = useState<Colorway>(colorway);
-  const [prefersReducedColor, setPrefersReducedColor] =
-    useState<boolean>(false);
 
   useEffect(() => {
-    setNavbarColorway({ ...colorway, border: colorway.text });
+    const _colorway = location.state
+      ? (location.state as { colorway: Colorway }).colorway
+      : {
+          background: "olive",
+          text: "olive",
+        };
+    setColorway({
+      ..._colorway,
+      background: _colorway.background + "-lighter",
+    });
+    setNavbarColorway({ ..._colorway, border: colorway.text });
     setMetaThemeColor(colorway.background!);
     setShouldRandomizeDropdownColor(true);
-  }, [colorway]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (params.id) {
@@ -45,18 +50,13 @@ const BlogViewPage = () => {
     }
   }, [params]);
 
-  const togglePrefersReducedColor = () => {
-    setReadingColorway(prefersReducedColor ? colorway : { background: "snow" });
-    setPrefersReducedColor(!prefersReducedColor);
-  };
-
   return (
     <div
       className={
         "b-blog-view-page-container " +
         getColorwayClasses({
-          background: readingColorway.background,
-          text: readingColorway.background,
+          background: colorway.background,
+          text: colorway.background,
         })
       }
     >
@@ -67,26 +67,11 @@ const BlogViewPage = () => {
           data={data}
           className="container"
           colorway={{
-            background: readingColorway.background,
-            text: readingColorway.background,
+            background: colorway.background,
+            text: colorway.text,
           }}
         />
       )}
-      <div
-        className="b-chip border-black bg-white"
-        style={{
-          position: "fixed",
-          bottom: 15,
-          right: 15,
-          color: "black",
-          cursor: "pointer",
-        }}
-        onClick={() => {
-          togglePrefersReducedColor();
-        }}
-      >
-        {prefersReducedColor ? "view in color" : "view in b&w"}
-      </div>
     </div>
   );
 };

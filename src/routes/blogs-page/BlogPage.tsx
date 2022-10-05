@@ -1,16 +1,25 @@
 import { IconChevronRight } from "@tabler/icons";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { colors } from "../../App";
 import { AppContext } from "../../AppContext";
+import { colors } from "../../common/colorway";
 import BlogPostCard from "../../components/blog-post-card/BlogPostCard";
 import useWindowSize from "../../hooks/useWindowSize";
 import { BBlogPost } from "../../models/BBlogPost";
 import { getAllBlogPosts } from "../../services/DatabaseService";
 import "./blogPage.scss";
 
+const mockTitles = [
+  "Lorem ipsum dolor sit amet consectetur adipisicing",
+  "Praesentium enim maiores sequi",
+  "Labore nulla voluptate officiis porro veritatis",
+  "Minima veritatis dolorem laborum repellendus magnam",
+  "Pariatur voluptate",
+  "Molestiae blanditiis deserunt natus suscipit?",
+];
+
 const BlogPostsPage = (): JSX.Element => {
-  const { setMetaThemeColor } = useContext(AppContext);
+  const { setNavbarColorway, setMetaThemeColor } = useContext(AppContext);
   const [postData, setPostData] = useState<BBlogPost[]>([]);
   const [active, setActive] = useState(-1);
   const navigate = useNavigate();
@@ -18,11 +27,13 @@ const BlogPostsPage = (): JSX.Element => {
 
   useEffect(() => {
     getAllBlogPosts().then((data) => setPostData(data));
+    setNavbarColorway({ background: undefined, text: "olive" });
     setMetaThemeColor("tan");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="b-blog-posts-container container-lg">
+    <div className="b-blog-posts-container container">
       {postData.map((data, index) => {
         const color = colors[index % colors.length];
         return (
@@ -46,8 +57,14 @@ const BlogPostsPage = (): JSX.Element => {
             }}
           >
             <BlogPostCard
-              data={data}
-              key={data.id}
+              data={
+                index > 0
+                  ? {
+                      ...data,
+                      title: mockTitles[index % mockTitles.length],
+                    }
+                  : data
+              }
               colorway={{
                 border: color,
                 background: color,
@@ -76,7 +93,18 @@ const BlogPostsPage = (): JSX.Element => {
                 " p-4 align-items-center d-none d-md-flex"
               }
               style={{ cursor: "pointer" }}
-              onClick={() => navigate("/works/" + data.id)}
+              onClick={() =>
+                navigate("/works/" + data.id, {
+                  state: {
+                    colorway: {
+                      border: color,
+                      background: color,
+                      text: color,
+                      hoverShadow: color,
+                    },
+                  },
+                })
+              }
             >
               <IconChevronRight size={50} stroke={1} />
             </div>

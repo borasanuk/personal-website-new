@@ -1,8 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { colors } from "../../App";
 import { AppContext, pages } from "../../AppContext";
-import { getColorwayClasses } from "../../common/colorway";
+import { colors, getColorwayClasses } from "../../common/colorway";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import useWindowSize from "../../hooks/useWindowSize";
 import Dropdown from "../dropdown/Dropdown";

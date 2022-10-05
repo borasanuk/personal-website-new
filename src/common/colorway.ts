@@ -25,19 +25,47 @@ export const getColorwayClasses = (colorway?: Colorway): string => {
   );
 };
 
+export const colors = [
+  "pink",
+  "olive",
+  "lime",
+  "yellow",
+  "peach",
+  "tan",
+  "blue",
+  "snow",
+];
+
 export const colorValues = {
+  pinkLighter: "#ffe4e4",
   pink: "#edc5c5",
   pinkDarker: "#98375e",
+
+  oliveLighter: "#edf9e2",
   olive: "#c4d3b5",
   oliveDarker: "#5c7444",
+
+  limeLighter: "#eafce5",
   lime: "#d1f9c6",
   limeDarker: "#516a5c",
+
+  yellowLighter: "#fff2d4",
   yellow: "#fbe6b4",
-  yellowDarker: "#a67504",
+  yellowDarker: "#805a00",
+
+  peachLighter: "#ffe0d2",
   peach: "#fbac8b",
   peachDarker: "#a33326",
+
+  tanLighter: "#fff6dc",
   tan: "#fcf0cd",
-  tanDarker: "#fa9c5d",
-  snow: "#f9f7f3",
+  tanDarker: "#fc934e",
+
+  blueLighter: "#f0f5ff",
+  blue: "#b9daff",
+  blueDarker: "#003f76",
+
+  snowLighter: "#fbfaf8",
+  snow: "#f2f8ff",
   snowDarker: "#222222",
 };

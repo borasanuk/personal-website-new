@@ -5,17 +5,16 @@
   flex-direction: column;
   width: 100%;
   // color: $b-text-pink;
-  max-width: 1000px;
+  // max-width: 1000px;
   font-weight: 500;
   transition: all 0.2s;
 
-  .b-blog-view-image {
-    border-radius: 10px;
-  }
+  // .b-blog-view-image {
+  //   border-radius: 10px;
+  // }
 
   img {
     width: 100%;
-    border-radius: 10px;
   }
 
   h1,
@@ -25,12 +24,33 @@
   h5,
   h6 {
     font-family: "Prata", serif;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
+    margin-top: 80px;
+    margin-bottom: 40px;
     // color: $b-text-pink-darker;
   }
-  p {
+  p,
+  ul,
+  ol {
     margin-bottom: 30px;
   }
 
-  
+  table td,
+  table td * {
+    vertical-align: top;
+  }
+
+  table {
+    margin: 0 auto;
+
+    th {
+      margin-right: 20px;
+    }
+
+    td {
+      padding-right: 30px;
+      max-width: 300px;
+      align-items: flex-start;
+    }
+  }
 }
