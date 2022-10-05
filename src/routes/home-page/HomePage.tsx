@@ -15,6 +15,7 @@ const HomePage = (): JSX.Element => {
     setNavbarColorway({ background: undefined, text: "olive" });
     setMetaThemeColor("tan");
     setShouldRandomizeDropdownColor(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

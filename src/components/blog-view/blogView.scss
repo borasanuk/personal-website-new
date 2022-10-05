@@ -13,6 +13,20 @@
   //   border-radius: 10px;
   // }
 
+  .b-blog-view-table {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    justify-content: center;
+    .b-blog-view-table-item {
+      flex: 1 1 100px;
+
+      .b-blog-view-table-item-content {
+        font-weight: 400;
+      }
+    }
+  }
+
   img {
     width: 100%;
   }
@@ -24,11 +38,15 @@
   h5,
   h6 {
     font-family: "Prata", serif;
-    // margin-bottom: 30px;
+  }
+
+  h1,
+  h2,
+  h3 {
     margin-top: 80px;
     margin-bottom: 40px;
-    // color: $b-text-pink-darker;
   }
+
   p,
   ul,
   ol {
