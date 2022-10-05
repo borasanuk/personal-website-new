@@ -36,7 +36,7 @@ const BlogView = ({ data, ...props }: BlogPostProps): JSX.Element => {
           </div>
         ))}
       </div>
-      <h1 className="mb-3">{data.title}</h1>
+      <h1 className="mb-3 mt-2">{data.title}</h1>
       <div>{epochToDate(data.date)}</div>
       <hr />
       <div className="py-3"></div>
