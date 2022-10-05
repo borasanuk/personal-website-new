@@ -42,18 +42,6 @@ const HomePage = (): JSX.Element => {
           <RecentBlogPosts size="sm" />
         </section>
         <ContactInfo style={{ zIndex: 1 }} />
-
-        {/* <img
-          src={AbstractGradient}
-          className="b-masthead-img"
-          style={{
-            position: "absolute",
-            height: "200%",
-            right: "-160px",
-            bottom: "-50%",
-          }}
-          alt=""
-        /> */}
       </div>
     </div>
   );

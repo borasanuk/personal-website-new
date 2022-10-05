@@ -29,6 +29,7 @@
 
     .b-dropdown-item {
       line-height: 1;
+      transition: all 0.2s;
 
       &.selected,
       &:hover {
