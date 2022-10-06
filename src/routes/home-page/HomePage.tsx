@@ -2,6 +2,7 @@ import { IconChevronRight, IconDownload } from "@tabler/icons";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../AppContext";
+import ContactForm from "../../components/contact-form/ContactForm";
 import ContactInfo from "../../components/contact-info/ContactInfo";
 import RecentBlogPosts from "../../components/recent-blog-posts/RecentBlogPosts";
 import "./homePage.scss";
@@ -15,7 +16,7 @@ const HomePage = (): JSX.Element => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setNavbarColorway({ background: undefined, text: "olive" });
+    setNavbarColorway({ text: "olive" });
     setMetaThemeColor("tan");
     setShouldRandomizeDropdownColor(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -25,7 +26,7 @@ const HomePage = (): JSX.Element => {
     <div className="b-masthead gap-3 gap-md-4">
       <div className="py-5"></div>
       <section
-        className="d-flex flex-column align-items-center justify-content-center border-pink bg-pink text-pink p-4"
+        className="d-flex flex-column align-items-center justify-content-center border-pink bg-pink text-pink px-4 py-5"
         style={{ flex: 1 }}
       >
         <div className="b-masthead-title text-center text-shadow-pink">
@@ -52,17 +53,22 @@ const HomePage = (): JSX.Element => {
           </div>
         </div>
       </section>
-      <section className="d-flex flex-wrap flex-column flex-md-row gap-3 gap-md-4">
+      <section className="d-flex flex-wrap flex-column flex-lg-row gap-3 gap-md-4">
         <RecentBlogPosts
           size="sm"
           className="bg-olive border-olive text-olive p-4"
-          style={{ flex: 1.5 }}
+          style={{ flex: 3 }}
         />
-        {/* <ContactForm
+        <ContactForm
           size="sm"
-          className="bg-olive border-olive text-olive p-4"
-          style={{ flex: 1 }}
-        /> */}
+          className="p-4"
+          style={{ flex: "1 1 300px" }}
+          colorway={{
+            background: "blue",
+            text: "blue",
+            border: "blue",
+          }}
+        />
         <ContactInfo className="bg-yellow border-yellow text-yellow p-4" />
       </section>
       <div className="py-1"></div>

@@ -6,6 +6,7 @@ import {
   query,
   limit,
   orderBy,
+  addDoc,
 } from "firebase/firestore";
 import { getBytes, ref } from "firebase/storage";
 import { BBlogPost } from "../models/BBlogPost";
@@ -52,4 +53,11 @@ export const getBlogPost = async (
   const decodedContent = decoder.decode(bytes);
   data.content = decodedContent;
   return data;
+};
+
+export const sendMessage = async (author: string, message: string) => {
+  await addDoc(collection(db, "messages"), {
+    author: author,
+    message: message,
+  });
 };
