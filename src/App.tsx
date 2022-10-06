@@ -16,7 +16,6 @@ const App = (): JSX.Element => {
     for (let p of pages) {
       if (loc.includes(p)) {
         setPage(p);
-        console.log(loc.includes(p), p);
       }
     }
   }, [location.pathname, setPage]);

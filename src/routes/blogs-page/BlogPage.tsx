@@ -10,15 +10,6 @@ import { BBlogPost } from "../../models/BBlogPost";
 import { getAllBlogPosts } from "../../services/DatabaseService";
 import "./blogPage.scss";
 
-const mockTitles = [
-  "Lorem ipsum dolor sit amet consectetur adipisicing",
-  "Praesentium enim maiores sequi",
-  "Labore nulla voluptate officiis porro veritatis",
-  "Minima veritatis dolorem laborum repellendus magnam",
-  "Pariatur voluptate",
-  "Molestiae blanditiis deserunt natus suscipit?",
-];
-
 const BlogPostsPage = (): JSX.Element => {
   const { setNavbarColorway, setMetaThemeColor } = useContext(AppContext);
   const [postData, setPostData] = useState<BBlogPost[]>([]);
@@ -59,14 +50,7 @@ const BlogPostsPage = (): JSX.Element => {
               }}
             >
               <BlogPostCard
-                data={
-                  index > 0
-                    ? {
-                        ...data,
-                        title: mockTitles[index % mockTitles.length],
-                      }
-                    : data
-                }
+                data={data}
                 colorway={{
                   border: color,
                   background: color,
