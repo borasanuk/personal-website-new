@@ -27,13 +27,13 @@ export const getColorwayClasses = (colorway?: Colorway): string => {
 
 export const colors = [
   "pink",
-  "olive",
-  "lime",
-  "yellow",
   "peach",
+  "yellow",
   "tan",
   "blue",
   "snow",
+  "lime",
+  "olive",
 ];
 
 export const colorValues = {
