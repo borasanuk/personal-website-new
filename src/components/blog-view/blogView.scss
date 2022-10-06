@@ -15,14 +15,15 @@
 
   .b-blog-view-table {
     display: flex;
-    gap: 30px;
-    margin-top: 30px;
-    justify-content: center;
+    gap: 50px;
+    padding: 20px 0;
+    justify-content: space-evenly;
     .b-blog-view-table-item {
-      flex: 1 1 100px;
-
+      max-width: 300px;
+      // height: fit-content;
       .b-blog-view-table-item-content {
         font-weight: 400;
+        margin-bottom: 0;
       }
     }
   }
@@ -69,6 +70,19 @@
       padding-right: 30px;
       max-width: 300px;
       align-items: flex-start;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .b-blog-view {
+    padding: 10px 0;
+    .b-blog-view-table {
+      flex-direction: column;
+      gap: 15px;
+      .b-blog-view-table-item {
+        max-width: 100%;
+      }
     }
   }
 }

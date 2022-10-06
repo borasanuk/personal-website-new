@@ -9,12 +9,13 @@ import {
 
 interface ContactInfoProps {
   style?: CSSProperties;
+  className?: string;
 }
 
 const ContactInfo = (props: ContactInfoProps) => {
   return (
     <section
-      className="b-contact border-olive text-olive p-4"
+      className={"b-contact " + props.className}
       style={props.style}
     >
       <IconAt className="mb-auto me-auto" />
