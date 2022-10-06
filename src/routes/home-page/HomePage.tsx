@@ -29,18 +29,18 @@ const HomePage = (): JSX.Element => {
         className="d-flex flex-column align-items-center justify-content-center border-pink bg-pink text-pink px-4 py-5"
         style={{ flex: 1 }}
       >
-        <div className="b-masthead-title text-center text-shadow-pink">
+        <div className="b-masthead-title text-center text-shadow-pink mt-3">
           hey, i'm bora.
         </div>
         <div className="b-masthead-subtitle text-center text-shadow-pink">
           i do frontend dev stuff, ui/ux, and design.
         </div>
         <div className="d-flex justify-content-center mt-4 gap-1 flex-wrap">
-          <div className="underline mx-4" style={{ cursor: "pointer" }}>
+          <div className="underline me-4" style={{ cursor: "pointer" }}>
             download cv
           </div>
           <div
-            className="underline mx-4"
+            className="underline"
             onClick={() => navigate("works")}
             style={{ cursor: "pointer" }}
           >

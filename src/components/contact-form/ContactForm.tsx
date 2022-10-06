@@ -54,7 +54,7 @@ const ContactForm = (props: ContactFormProps) => {
   return (
     <form
       onSubmit={form.onSubmit((values) => handleSubmit(values))}
-      className="d-flex flex-column flex-md-row gap-2"
+      className="d-flex flex-column flex-sm-row"
       style={props.style}
     >
       <div
