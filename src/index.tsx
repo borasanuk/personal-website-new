@@ -20,6 +20,10 @@ root.render(
           <Route path="" element={<HomePage />} />
           <Route path="works" element={<BlogPage />} />
           <Route path="works/:id" element={<BlogViewPage />} />
+          <Route
+            path="aos"
+            element={<Navigate replace to={"/works/KIQQkZhA8A9T2AKJqWoc"} />}
+          />
           <Route path="*" element={<Navigate replace to={"/"} />} />
         </Route>
       </Routes>

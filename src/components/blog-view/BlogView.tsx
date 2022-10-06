@@ -25,7 +25,7 @@ const BlogView = ({ data, ...props }: BlogPostProps): JSX.Element => {
       }
     >
       <img className="b-blog-view-image" src={data.img_src} alt="" />
-      <div className="d-flex gap-2 my-3">
+      <div className="d-flex flex-wrap gap-2 my-3">
         <div
           className={
             "b-chip" +
@@ -55,6 +55,7 @@ const BlogView = ({ data, ...props }: BlogPostProps): JSX.Element => {
         )}
       </div>
       <h1 className="mb-3 mt-2">{data.title}</h1>
+      <hr />
       <Markdown>{data.content}</Markdown>
     </div>
   );
