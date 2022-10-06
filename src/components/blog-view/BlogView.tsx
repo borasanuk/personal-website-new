@@ -57,6 +57,7 @@ const BlogView = ({ data, ...props }: BlogPostProps): JSX.Element => {
       <h1 className="mb-3 mt-2">{data.title}</h1>
       <hr />
       <Markdown>{data.content}</Markdown>
+      <div className="py-5"></div>
     </div>
   );
 };
