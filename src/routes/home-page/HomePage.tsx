@@ -1,9 +1,6 @@
 import {
   IconArrowUpRight,
-  IconChevronRight,
-  IconChevronUpRight,
-  IconDownload,
-  IconHeart,
+  IconChevronRight, IconHeart
 } from "@tabler/icons";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +15,7 @@ const HomePage = (): JSX.Element => {
   const {
     setNavbarColorway,
     setShouldRandomizeDropdownColor,
+    setBodyBackground,
     setMetaThemeColor,
   } = useContext(AppContext);
   const navigate = useNavigate();
@@ -25,6 +23,7 @@ const HomePage = (): JSX.Element => {
   useEffect(() => {
     setNavbarColorway({ text: "olive" });
     setMetaThemeColor("tan");
+    setBodyBackground(colorValues["tan"])
     setShouldRandomizeDropdownColor(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

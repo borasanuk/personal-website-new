@@ -43,7 +43,7 @@ const BlogViewPage = () => {
       background: _colorway.background + "-lighter",
     });
     setNavbarColorway({ ..._colorway, border: colorway.text });
-    setMetaThemeColor(colorway.background!);
+    setMetaThemeColor(colorway.background! + "Lighter");
     setBodyBackground(colorValues[colorway.background + "Lighter" as keyof typeof colorValues])
     setShouldRandomizeDropdownColor(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
