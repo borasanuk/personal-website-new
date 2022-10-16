@@ -25,7 +25,7 @@ const Navbar = (): JSX.Element => {
       return;
     }
 
-    if (lastScrollPosition > scrollPosition) {
+    if (lastScrollPosition > scrollPosition ) {
       setShowNavbar(true);
     } else {
       setShowNavbar(false);

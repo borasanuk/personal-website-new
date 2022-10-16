@@ -1,3 +1,4 @@
+import { IconChevronUp } from "@tabler/icons";
 import Markdown from "markdown-to-jsx";
 import {
   colorValues,
