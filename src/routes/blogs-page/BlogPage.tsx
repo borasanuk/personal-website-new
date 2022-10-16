@@ -1,5 +1,6 @@
 import { Loader } from "@mantine/core";
 import { IconChevronRight } from "@tabler/icons";
+import { logEvent } from "firebase/analytics";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../AppContext";
@@ -8,6 +9,7 @@ import BlogPostCard from "../../components/blog-post-card/BlogPostCard";
 import useWindowSize from "../../hooks/useWindowSize";
 import { BBlogPost } from "../../models/BBlogPost";
 import { getAllBlogPosts } from "../../services/DatabaseService";
+import { analytics } from "../../services/firebaseConfig";
 import "./blogPage.scss";
 
 const BlogPostsPage = (): JSX.Element => {

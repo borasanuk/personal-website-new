@@ -42,8 +42,8 @@ const BlogPostCard = ({
     >
       {/* <img src={data.img_src} className="b-blog-post-card-img" alt="" /> */}
       <div className="b-blog-post-card-tags-container">
-        {data.tags.map((tag) => (
-          <div className="b-blog-post-card-tag">{tag}</div>
+        {data.tags.map((tag, index) => (
+          <div className="b-blog-post-card-tag" key={index}>{tag}</div>
         ))}
         <div className="b-blog-post-card-date">
           {epochToDate(data.date, "numeric")}
