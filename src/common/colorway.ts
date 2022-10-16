@@ -37,7 +37,7 @@ export const colors = [
 ];
 
 export const colorValues = {
-  pinkLighter: "#ffe4e4",
+  pinkLighter: "#ffefef",
   pink: "#edc5c5",
   pinkDarker: "#98375e",
 
@@ -53,7 +53,7 @@ export const colorValues = {
   yellow: "#fbe6b4",
   yellowDarker: "#805a00",
 
-  peachLighter: "#ffe0d2",
+  peachLighter: "#ffece3",
   peach: "#fbac8b",
   peachDarker: "#a33326",
 

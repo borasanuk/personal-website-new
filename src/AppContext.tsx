@@ -9,6 +9,7 @@ interface AppState {
   navbarColorway: Colorway;
   setNavbarColorway: Dispatch<SetStateAction<Colorway>>;
   setMetaThemeColor: (color: string) => void;
+  setBodyBackground: (color: string) => void;
   shouldRandomizeDropdownColor: boolean;
   setShouldRandomizeDropdownColor: Dispatch<SetStateAction<boolean>>;
 }
@@ -32,6 +33,10 @@ export const AppContextProvider = ({ children }: AppProviderProps) => {
     scheme?.setAttribute("content", colorValues[color as keyof typeof colorValues]);
   }
 
+  const setBodyBackground = (color: string) => {
+    document.body.style.backgroundColor = color;
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -40,6 +45,7 @@ export const AppContextProvider = ({ children }: AppProviderProps) => {
         navbarColorway,
         setNavbarColorway,
         setMetaThemeColor,
+        setBodyBackground,
         shouldRandomizeDropdownColor,
         setShouldRandomizeDropdownColor,
       }}

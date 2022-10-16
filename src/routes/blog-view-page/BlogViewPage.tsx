@@ -17,6 +17,7 @@ const BlogViewPage = () => {
     setNavbarColorway,
     setShouldRandomizeDropdownColor,
     setMetaThemeColor,
+    setBodyBackground,
   } = useContext(AppContext);
   const params = useParams();
   const [data, setData] = useState<BBlogPost>();
@@ -43,6 +44,7 @@ const BlogViewPage = () => {
     });
     setNavbarColorway({ ..._colorway, border: colorway.text });
     setMetaThemeColor(colorway.background!);
+    setBodyBackground(colorValues[colorway.background + "Lighter" as keyof typeof colorValues])
     setShouldRandomizeDropdownColor(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

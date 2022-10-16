@@ -13,7 +13,7 @@ import { analytics } from "../../services/firebaseConfig";
 import "./blogPage.scss";
 
 const BlogPostsPage = (): JSX.Element => {
-  const { setNavbarColorway, setMetaThemeColor } = useContext(AppContext);
+  const { setNavbarColorway, setMetaThemeColor, setBodyBackground } = useContext(AppContext);
   const [postData, setPostData] = useState<BBlogPost[]>([]);
   const [active, setActive] = useState(-1);
   const navigate = useNavigate();
@@ -23,6 +23,7 @@ const BlogPostsPage = (): JSX.Element => {
     getAllBlogPosts().then((data) => setPostData(data));
     setNavbarColorway({ background: undefined, text: "olive" });
     setMetaThemeColor("tan");
+    setBodyBackground(colorValues["tan"])
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
