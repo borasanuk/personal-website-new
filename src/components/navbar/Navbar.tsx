@@ -17,7 +17,23 @@ const Navbar = (): JSX.Element => {
     colors[Math.floor(Math.random() * colors.length)]
   );
 
-  // useEffect(() => )
+  const [lastScrollPosition, setLastScrollPosition] = useState(0);
+  const [showNavbar, setShowNavbar] = useState(true);
+  useEffect(() => {
+
+    if (scrollPosition < 100) {
+      return;
+    }
+
+    if (lastScrollPosition > scrollPosition) {
+      setShowNavbar(true);
+    } else {
+      setShowNavbar(false);
+    }
+
+    setLastScrollPosition(scrollPosition);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollPosition]);
 
   const isNavbarActive = (): boolean => {
     // return scrollPosition > 0 || page !== "home";
@@ -34,7 +50,10 @@ const Navbar = (): JSX.Element => {
   };
 
   return (
-    <div className="b-navbar-container" ref={navbarRef}>
+    <div
+      className={"b-navbar-container" + (showNavbar ? "" : " hidden")}
+      ref={navbarRef}
+    >
       <div
         className={
           "b-navbar" +
