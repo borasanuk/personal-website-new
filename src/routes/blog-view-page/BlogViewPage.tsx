@@ -1,5 +1,5 @@
 import { Loader } from "@mantine/core";
-import { IconChevronUp } from "@tabler/icons";
+import { IconChevronUp, IconPalette, IconPaletteOff } from "@tabler/icons";
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { AppContext } from "../../AppContext";
@@ -25,6 +25,8 @@ const BlogViewPage = () => {
   const [data, setData] = useState<BBlogPost>();
   const location = useLocation();
   const scrollPosition = useScrollPosition();
+  const [prefersReducedColor, setPrefersReducedColor] = useState(false);
+  const [initialColorway, setInitialColorway] = useState<Colorway>();
   const [colorway, setColorway] = useState<Colorway>(
     location.state
       ? (location.state as { colorway: Colorway }).colorway
@@ -45,6 +47,10 @@ const BlogViewPage = () => {
       ..._colorway,
       background: _colorway.background + "-lighter",
     });
+    setInitialColorway({
+      ..._colorway,
+      background: _colorway.background + "-lighter",
+    });
     setNavbarColorway({ ..._colorway, border: colorway.text });
     setMetaThemeColor(colorway.background! + "Lighter");
     setBodyBackground(
@@ -61,6 +67,31 @@ const BlogViewPage = () => {
       });
     }
   }, [params]);
+
+  useEffect(() => {
+    if (!initialColorway) return;
+    if (prefersReducedColor) {
+      setNavbarColorway({ background: "snow", text: "snow", border: "snow" });
+      setColorway({ background: "snow", text: "snow" });
+      setMetaThemeColor("snowLighter");
+      setBodyBackground(colorValues.snowLighter);
+      setShouldRandomizeDropdownColor(false);
+    } else {
+      setColorway(initialColorway);
+      setNavbarColorway({
+        ...initialColorway,
+        border: initialColorway.text,
+        background: initialColorway.text,
+      });
+      setMetaThemeColor(initialColorway.background! + "Lighter");
+      setBodyBackground(
+        colorValues[
+          (initialColorway.background + "Lighter") as keyof typeof colorValues
+        ]
+      );
+      setShouldRandomizeDropdownColor(true);
+    }
+  }, [prefersReducedColor]);
 
   return (
     <div
@@ -101,10 +132,33 @@ const BlogViewPage = () => {
           />
         </div>
       )}
-    {<div
+      {initialColorway && (
+        <div
+          className={
+            "theme-toggle" +
+            (prefersReducedColor
+              ? getColorwayClasses({
+                  text: initialColorway.text,
+                  border: initialColorway.text,
+                })
+              : getColorwayClasses({ text: "snow", border: "snow" })) +
+            (scrollPosition > 100 ? " shifted" : "")
+          }
+          onClick={() => setPrefersReducedColor(!prefersReducedColor)}
+          style={{
+            backgroundColor: prefersReducedColor
+              ? colorValues[initialColorway.text as keyof typeof colorValues]
+              : colorValues.snow,
+            // colorValues["peach"],
+          }}
+        >
+          {prefersReducedColor ? <IconPalette /> : <IconPaletteOff />}
+        </div>
+      )}
+      <div
         className={
           "scroll-to-top" +
-          getColorwayClasses({ text: colorway.text, border: colorway.text }) + 
+          getColorwayClasses({ text: colorway.text, border: colorway.text }) +
           (scrollPosition > 100 ? "" : " hidden")
         }
         onClick={() => window.scrollTo(0, 0)}
@@ -114,8 +168,8 @@ const BlogViewPage = () => {
           // colorValues["peach"],
         }}
       >
-        <IconChevronUp className=""/>
-      </div>}
+        <IconChevronUp />
+      </div>
     </div>
   );
 };
