@@ -21,7 +21,7 @@
   .b-masthead-title {
     font-family: "Poppins", serif;
     font-weight: 600;
-    font-size: clamp(36px, 8vw, 80px);
+    font-size: 80px;
     transition: all 0.5s;
     line-height: 1;
     margin-bottom: 20px;
@@ -29,48 +29,55 @@
 
   .b-masthead-subtitle {
     font-family: "Poppins", serif;
-    font-size: clamp(22px, 3vw, 42px);
-    line-height: 1;
+    font-size: 42px;
+    line-height: 1.2;
   }
 }
 
-// @media only screen and (max-width: 942px) {
-//   .b-masthead {
-//     padding: 0 24px;
-//     // gap: 50px;
-//   }
-// }
+@media only screen and (max-width: 1200px) {
+  .b-masthead {
+    padding: 0 24px;
 
-// @media only screen and (max-width: 800px) {
-//   .b-masthead {
-//     // align-items: center;
-//     padding: 0 24px;
-//     // gap: 20px;
+    .b-masthead-title {
+      font-size: 64px;
+    }
 
-//     // .b-masthead-title {
-//     //   text-align: center;
-//     //   font-size: 56px;
-//     // }
+    .b-masthead-subtitle {
+      font-size: 36px;
+    }
+  }
+}
 
-//     // .b-masthead-subtitle {
-//     //   text-align: center;
-//     //   font-size: 26px;
-//     // }
-//   }
-// }
+@media only screen and (max-width: 992px) {
+  .b-masthead {
+    .b-masthead-title {
+      font-size: 56px;
+    }
+
+    .b-masthead-subtitle {
+      font-size: 28px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .b-masthead {
+    .b-masthead-title {
+      font-size: 48px;
+    }
+
+    .b-masthead-subtitle {
+      font-size: 22px;
+    }
+  }
+}
 
 @media only screen and (max-width: 576px) {
   .b-masthead {
     padding: 0 12px;
 
-    // .b-masthead-title {
-    //   text-align: center;
-    //   font-size: 48px;
-    // }
-
-    // .b-masthead-subtitle {
-    //   text-align: center;
-    //   font-size: 22px;
-    // }
+    .b-masthead-title {
+      font-size: 36px;
+    }
   }
 }
