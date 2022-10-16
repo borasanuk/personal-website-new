@@ -72,7 +72,7 @@ const BlogViewPage = () => {
     if (!initialColorway) return;
     if (prefersReducedColor) {
       setNavbarColorway({ background: "snow", text: "snow", border: "snow" });
-      setColorway({ background: "snow", text: "snow" });
+      setColorway({ background: "snow-lighter", text: "snow" });
       setMetaThemeColor("snowLighter");
       setBodyBackground(colorValues.snowLighter);
       setShouldRandomizeDropdownColor(false);
@@ -83,10 +83,10 @@ const BlogViewPage = () => {
         border: initialColorway.text,
         background: initialColorway.text,
       });
-      setMetaThemeColor(initialColorway.background! + "Lighter");
+      setMetaThemeColor(initialColorway.text! + "Lighter");
       setBodyBackground(
         colorValues[
-          (initialColorway.background + "Lighter") as keyof typeof colorValues
+          (initialColorway.text + "Lighter") as keyof typeof colorValues
         ]
       );
       setShouldRandomizeDropdownColor(true);

@@ -65,7 +65,7 @@ export const colorValues = {
   blue: "#b9daff",
   blueDarker: "#003f76",
 
-  snowLighter: "#fbfaf8",
+  snowLighter: "#f8f8fb",
   snow: "#f2f8ff",
   snowDarker: "#222222",
 };
